@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Villa Marina | Casa al Mare</title>
+  <meta name="description" content="Landing page elegante e moderna per una casa al mare, ottimizzata per presentazione, prenotazioni e contatti." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sand: '#f6efe7',
+            ocean: '#0f766e',
+            deep: '#082f49',
+            shell: '#fffaf5',
+            gold: '#d6a85f'
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(15, 23, 42, 0.08)',
+            glow: '0 20px 60px rgba(8, 47, 73, 0.22)'
+          },
+          backgroundImage: {
+            hero: 'linear-gradient(135deg, rgba(8,47,73,.78), rgba(15,118,110,.45))',
+            card: 'linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65))'
+          },
+          animation: {
+            floaty: 'floaty 6s ease-in-out infinite',
+            fadeUp: 'fadeUp .8s ease forwards',
+            slowPulse: 'slowPulse 4s ease-in-out infinite'
+          },
+          keyframes: {
+            floaty: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' }
+            },
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            slowPulse: {
+              '0%, 100%': { opacity: '.65' },
+              '50%': { opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #fffaf5; color: #0f172a; }
+    .glass { backdrop-filter: blur(14px); background: rgba(255,255,255,.66); }
+    .reveal { opacity: 0; transform: translateY(26px); transition: all .75s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    .hero-bg {
+      background-image:
+        linear-gradient(135deg, rgba(8,47,73,.82), rgba(15,118,110,.44)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .parallax {
+      transform: translateY(var(--parallax, 0px));
+      transition: transform .1s linear;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 72px;
+      height: 4px;
+      margin-top: 14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #d6a85f, #0f766e);
+    }
+    .photo-card:hover img { transform: scale(1.06); }
+    .photo-card img { transition: transform .7s ease; }
+    .nav-scrolled {
+      background: rgba(255, 250, 245, .88);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-ocean/20 selection:text-deep">
+  <!-- imports / icons -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></symbol>
+    <symbol id="icon-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 14c2.5 0 2.5-4 5-4s2.5 4 5 4 2.5-4 5-4 2.5 4 5 4"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10Z"/><circle cx="12" cy="11" r="2.5"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.8 19.8 0 0 1 2.08 4.09 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.79.62 2.64a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.09 6.09l1.44-1.24a2 2 0 0 1 2.11-.45c.85.29 1.74.5 2.64.62A2 2 0 0 1 22 16.92Z"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.93 5.94 6.56.95-4.74 4.62 1.12 6.53L12 17.46 6.13 20.54l1.12-6.53L2.5 9.39l6.57-.95L12 2.5Z"/></symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r=".8" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="icon-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6h1.6V4.8c-.3 0-1.2-.1-2.3-.1-2.2 0-3.8 1.3-3.8 3.9V11H8v3h2.7v8h2.8Z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16v12H4z"/><path stroke-linecap="round" stroke-linejoin="round" d="m4 8 8 6 8-6"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  </svg>
+
+  <!-- navbar -->
+  <header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mt-4 flex items-center justify-between rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-white transition-all duration-300 md:px-6">
+        <a href="#home" class="flex items-center gap-3 font-semibold tracking-wide">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10">
+            <svg class="h-5 w-5"><use href="#icon-wave"></use></svg>
+          </span>
+          <div>
+            <p class="text-sm uppercase tracking-[0.24em] text-white/70">casa al mare</p>
+            <p class="text-base">villa marina</p>
+          </div>
+        </a>
+
+        <nav class="hidden items-center gap-8 text-sm font-medium lg:flex">
+          <a href="#struttura" class="hover:text-gold transition">struttura</a>
+          <a href="#galleria" class="hover:text-gold transition">galleria</a>
+          <a href="#servizi" class="hover:text-gold transition">servizi</a>
+          <a href="#territorio" class="hover:text-gold transition">territorio</a>
+          <a href="#contatti" class="hover:text-gold transition">contatti</a>
+        </nav>
+
+        <div class="hidden lg:block">
+          <a href="#contatti" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-deep transition hover:-translate-y-0.5 hover:shadow-soft">
+            richiedi info
+            <svg class="h-4 w-4"><use href="#icon-arrow"></use></svg>
+          </a>
+        </div>
+
+        <button id="menuBtn" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 lg:hidden">
+          <svg class="h-5 w-5"><use href="#icon-menu"></use></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="mx-4 mt-3 hidden rounded-3xl border border-slate-200 bg-white p-4 shadow-soft lg:hidden">
+      <div class="flex flex-col gap-3 text-sm font-medium text-slate-700">
+        <a href="#struttura" class="rounded-xl px-3 py-2 hover:bg-slate-50">struttura</a>
+        <a href="#galleria" class="rounded-xl px-3 py-2 hover:bg-slate-50">galleria</a>
+        <a href="#servizi" class="rounded-xl px-3 py-2 hover:bg-slate-50">servizi</a>
+        <a href="#territorio" class="rounded-xl px-3 py-2 hover:bg-slate-50">territorio</a>
+        <a href="#contatti" class="rounded-xl px-3 py-2 hover:bg-slate-50">contatti</a>
+        <a href="#contatti" class="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-deep px-4 py-3 font-semibold text-white">richiedi info <svg class="h-4 w-4"><use href="#icon-arrow"></use></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- hero -->
+    <section id="home" class="hero-bg relative min-h-screen overflow-hidden text-white">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-deep/60"></div>
+      <div class="absolute -left-16 top-28 h-72 w-72 rounded-full bg-gold/20 blur-3xl animate-slowPulse"></div>
+      <div class="absolute bottom-16 right-0 h-80 w-80 rounded-full bg-teal-300/10 blur-3xl animate-slowPulse"></div>
+
+      <div class="relative mx-auto flex min-h-screen max-w-7xl items-center px-4 pb-14 pt-32 sm:px-6 lg:px-8">
+        <div class="grid w-full items-center gap-14 lg:grid-cols-[1.15fr_.85fr]">
+          <div class="max-w-3xl">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm glass">
+              <span class="h-2 w-2 rounded-full bg-gold animate-pulse"></span>
+              elegante, accogliente, pronta da personalizzare
+            </div>
+            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl lg:text-7xl">
+              La tua
+              <span class="bg-gradient-to-r from-white via-sand to-gold bg-clip-text text-transparent">casa al are</span>
+              <!-- Raccontata come merita -->
+            </h1>
+            <p class="mt-6 max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
+              Landing page premium pensata per valorizzare struttura, atmosfera, posizione e servizi. perfetta per affitti, presentazione privata o vetrina online con un impatto visivo forte fin dal primo scroll.
+            </p>
+
+            <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+              <a href="#contatti" class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 font-semibold text-deep transition hover:-translate-y-1 hover:shadow-glow">
+                Prenota una visita
+                <svg class="h-4 w-4"><use href="#icon-arrow"></use></svg>
+              </a>
+              <a href="#galleria" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3.5 font-semibold text-white glass transition hover:-translate-y-1">
+                Guarda la galleria
+              </a>
+            </div>
+
+            <div class="mt-12 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-white/15 bg-white/10 p-4 glass">
+                <p class="text-2xl font-semibold">4</p>
+                <p class="mt-1 text-sm text-white/75">Posti letto</p>
+              </div>
+              <div class="rounded-2xl border border-white/15 bg-white/10 p-4 glass">
+                <p class="text-2xl font-semibold">400m</p>
+                <p class="mt-1 text-sm text-white/75">Dal mare</p>
+              </div>
+              <div class="rounded-2xl border border-white/15 bg-white/10 p-4 glass">
+                <p class="text-2xl font-semibold">4</p>
+                <p class="mt-1 text-sm text-white/75">Ambienti disponibili</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative flex flex-col items-end gap-4 lg:gap-0">
+            <div class="parallax w-full max-w-md rounded-[2rem] border border-white/20 bg-white/10 p-4 shadow-glow glass animate-floaty" data-parallax="12">
+              <div class="overflow-hidden rounded-[1.6rem]">
+                <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1200&q=80" alt="Anteprima casa al mare" class="h-[480px] w-full object-cover" />
+              </div>
+              <div class="grid grid-cols-2 gap-3 p-3">
+                <div class="rounded-2xl bg-white/10 p-3">
+                  <p class="text-xs uppercase tracking-[0.24em] text-white/55">zona</p>
+                  <p class="mt-2 text-sm font-medium">[località]</p>
+                </div>
+                <div class="rounded-2xl bg-white/10 p-3">
+                  <p class="text-xs uppercase tracking-[0.24em] text-white/55">stile</p>
+                  <p class="mt-2 text-sm font-medium">Moderno, Mediterraneo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- feedback -->
+    <section id="feedback" class="relative z-10 bg-deep px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal mb-8 max-w-2xl">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-gold">Recensioni</p>
+          <h2 class="text-2xl font-semibold text-white sm:text-3xl">Sezione recensioni pulita, elegante e pronta ad espandersi</h2>
+          <p class="mt-4 text-sm leading-7 text-white/75 sm:text-base">Qui puoi aggiungere più testimonianze reali in modo ordinato e facile da scalare.</p>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div class="reveal rounded-[2rem] border border-white/15 bg-white/90 p-6 text-slate-800 shadow-soft backdrop-blur">
+            <div class="mb-4 flex items-center gap-2 text-gold">
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+            </div>
+            <p class="text-sm leading-7 text-slate-600">“Spazio ideale per chi cerca relax, luce, comfort e vicinanza alla spiaggia. perfetto per famiglie, coppie o soggiorni estivi.”</p>
+            <p class="mt-5 text-sm font-semibold text-slate-900">Mario Rossi - 13/08/2024</p>
+          </div>
+
+          <div class="reveal rounded-[2rem] border border-white/15 bg-white/90 p-6 text-slate-800 shadow-soft backdrop-blur">
+            <div class="mb-4 flex items-center gap-2 text-gold">
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+            </div>
+            <p class="text-sm leading-7 text-slate-600">“Aggiungi qui altre opinioni, mini testimonianze o una frase di presentazione della casa per aumentare fiducia e valore percepito.”</p>
+            <p class="mt-5 text-sm font-semibold text-slate-900">Mario Rossi - 13/08/2024</p>
+          </div>
+
+          <div class="reveal rounded-[2rem] border border-white/15 bg-white/90 p-6 text-white shadow-soft backdrop-blur md:col-span-2 xl:col-span-1">
+            <div class="mb-4 flex items-center gap-2 text-gold">
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+              <svg class="h-4 w-4"><use href="#icon-star"></use></svg>
+            </div>
+            <p class="text-sm leading-7 text-slate-600">“Layout già pronto per ospitare altri feedback veri appena avrai i contenuti definitivi, senza dover toccare la parte alta della pagina.”</p>
+            <p class="mt-5 text-sm font-semibold text-slate-900">Mario Rossi - 13/08/2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- intro -->
+    <section class="relative z-10 bg-[#fffaf5] pt-8">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-ocean">caratteristiche</p>
+        <div class="grid gap-6 lg:grid-cols-3">
+          <div class="reveal rounded-[2rem] bg-white p-7 shadow-soft">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-sand text-ocean">
+              <svg class="h-5 w-5"><use href="#icon-pin"></use></svg>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900">posizione strategica</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">inserisci qui vicinanza al mare, al centro, ai servizi, ai ristoranti e ai luoghi d’interesse della zona.</p>
+          </div>
+          <div class="reveal rounded-[2rem] bg-white p-7 shadow-soft">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-sand text-ocean">
+              <svg class="h-5 w-5"><use href="#icon-wave"></use></svg>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900">atmosfera unica</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">racconta la sensazione della casa: vista, silenzio, tramonti, arredamento, luminosità e identità del posto.</p>
+          </div>
+          <div class="reveal rounded-[2rem] bg-white p-7 shadow-soft">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-sand text-ocean">
+              <svg class="h-5 w-5"><use href="#icon-phone"></use></svg>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900">contatti rapidi</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">predisposta per telefono, whatsapp, email, social, mappa e tutte le call to action più utili per il contatto diretto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- struttura -->
+    <section id="struttura" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid items-center gap-14 lg:grid-cols-[.92fr_1.08fr]">
+          <div class="reveal">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-ocean">la struttura</p>
+            <h2 class="section-title text-3xl font-semibold text-slate-900 sm:text-4xl">una presentazione curata, elegante e subito credibile</h2>
+            <p class="mt-6 max-w-xl text-base leading-8 text-slate-600">
+              questa sezione è pensata per raccontare la casa in modo emozionale ma chiaro: spazi, comfort, stile, destinazione d’uso e punti forti. puoi usarla sia come presentazione istituzionale che come supporto commerciale.
+            </p>
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft">
+                <p class="text-sm font-semibold text-slate-900">interni luminosi</p>
+                <p class="mt-2 text-sm leading-7 text-slate-600">salone, camere, cucina, bagno, terrazza o altri ambienti da mettere in evidenza.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft">
+                <p class="text-sm font-semibold text-slate-900">comfort essenziali</p>
+                <p class="mt-2 text-sm leading-7 text-slate-600">aria condizionata, wi-fi, parcheggio, lavatrice, cucina attrezzata, tv e altro.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft">
+                <p class="text-sm font-semibold text-slate-900">adatta a più target</p>
+                <p class="mt-2 text-sm leading-7 text-slate-600">famiglie, coppie, gruppi piccoli o soggiorni rilassanti al mare.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft">
+                <p class="text-sm font-semibold text-slate-900">testi facilmente sostituibili</p>
+                <p class="mt-2 text-sm leading-7 text-slate-600">tutto è già pronto per essere personalizzato con i contenuti reali appena arrivano.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal grid gap-4 sm:grid-cols-2">
+            <div class="overflow-hidden rounded-[2rem] bg-white shadow-soft photo-card sm:translate-y-8">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80" alt="Camera elegante" class="h-72 w-full object-cover" />
+            </div>
+            <div class="overflow-hidden rounded-[2rem] bg-white shadow-soft photo-card">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80" alt="Interni casa" class="h-80 w-full object-cover" />
+            </div>
+            <div class="overflow-hidden rounded-[2rem] bg-white shadow-soft photo-card">
+              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1000&q=80" alt="Zona living" class="h-80 w-full object-cover" />
+            </div>
+            <div class="overflow-hidden rounded-[2rem] bg-white shadow-soft photo-card sm:-translate-y-8">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80" alt="Dettaglio casa" class="h-72 w-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- numeri -->
+    <section class="bg-deep px-4 py-20 text-white sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-6 glass">
+            <p class="text-4xl font-semibold text-gold">[x]</p>
+            <p class="mt-2 text-sm uppercase tracking-[0.24em] text-white/50">camere</p>
+          </div>
+          <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-6 glass">
+            <p class="text-4xl font-semibold text-gold">[x]</p>
+            <p class="mt-2 text-sm uppercase tracking-[0.24em] text-white/50">bagni</p>
+          </div>
+          <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-6 glass">
+            <p class="text-4xl font-semibold text-gold">[x]</p>
+            <p class="mt-2 text-sm uppercase tracking-[0.24em] text-white/50">mq</p>
+          </div>
+          <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-6 glass">
+            <p class="text-4xl font-semibold text-gold">[x]</p>
+            <p class="mt-2 text-sm uppercase tracking-[0.24em] text-white/50">ospiti max</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- galleria -->
+    <section id="galleria" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal mb-12 max-w-2xl">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-ocean">galleria</p>
+          <h2 class="section-title text-3xl font-semibold text-slate-900 sm:text-4xl">spazi pronti per foto reali, dettagli e storytelling visivo</h2>
+          <p class="mt-6 text-base leading-8 text-slate-600">qui puoi sostituire le immagini demo con quelle della casa, mantenendo un layout forte sia su desktop sia su mobile. la composizione è studiata per dare subito qualità percepita.</p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <button class="gallery-item reveal group overflow-hidden rounded-[2rem] bg-white shadow-soft lg:col-span-2 lg:row-span-2" data-src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80" alt="Esterno villa" class="h-full min-h-[320px] w-full object-cover transition duration-700 group-hover:scale-105" />
+          </button>
+          <button class="gallery-item reveal group overflow-hidden rounded-[2rem] bg-white shadow-soft" data-src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Soggiorno" class="h-64 w-full object-cover transition duration-700 group-hover:scale-105" />
+          </button>
+          <button class="gallery-item reveal group overflow-hidden rounded-[2rem] bg-white shadow-soft" data-src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80" alt="Camera" class="h-64 w-full object-cover transition duration-700 group-hover:scale-105" />
+          </button>
+          <button class="gallery-item reveal group overflow-hidden rounded-[2rem] bg-white shadow-soft" data-src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Interni moderni" class="h-64 w-full object-cover transition duration-700 group-hover:scale-105" />
+          </button>
+          <button class="gallery-item reveal group overflow-hidden rounded-[2rem] bg-white shadow-soft" data-src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Dettagli casa" class="h-64 w-full object-cover transition duration-700 group-hover:scale-105" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- servizi -->
+    <section id="servizi" class="bg-sand px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal mb-12 max-w-2xl">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-ocean">servizi e comfort</p>
+          <h2 class="section-title text-3xl font-semibold text-slate-900 sm:text-4xl">tutto quello che rende il soggiorno semplice, bello e comodo</h2>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal rounded-[2rem] bg-white p-6 shadow-soft">
+            <p class="text-base font-semibold">wi-fi veloce</p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">ideale per smart working leggero, streaming e navigazione senza pensieri.</p>
+          </div>
+          <div class="reveal rounded-[2rem] bg-white p-6 shadow-soft">
+            <p class="text-base font-semibold">aria condizionata</p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">comfort termico nei mesi più caldi con ambienti piacevoli a tutte le ore.</p>
+          </div>
+          <div class="reveal rounded-[2rem] bg-white p-6 shadow-soft">
+            <p class="text-base font-semibold">cucina attrezzata</p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">spazio pronto per pranzi, cene e vacanze vissute senza vincoli esterni.</p>
+          </div>
+          <div class="reveal rounded-[2rem] bg-white p-6 shadow-soft">
+            <p class="text-base font-semibold">parcheggio / accesso facile</p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">evidenzia qui il valore pratico della struttura e la comodità all’arrivo.</p>
+          </div>
+          <div class="reveal rounded-[2rem] bg-white p-6 shadow-soft">
+            <p class="text-base font-semibold">spazi esterni</p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">balcone, terrazza, veranda o giardino da valorizzare come esperienza.</p>
+          </div>
+          <div class="reveal rounded-[2rem] bg-white p-6 shadow-soft">
+            <p class="text-base font-semibold">adatta a famiglie</p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">ottima soluzione per chi cerca praticità, ordine e relax vicino al mare.</p>
+          </div>
+          <div class="reveal rounded-[2rem] bg-white p-6 shadow-soft">
+            <p class="text-base font-semibold">pulizia e ordine</p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">usa questo spazio per inserire standard, attenzione ai dettagli e cura.</p>
+          </div>
+          <div class="reveal rounded-[2rem] bg-white p-6 shadow-soft">
+            <p class="text-base font-semibold">personalizzabile</p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">la lista può essere ampliata o resa più premium con icone e dettagli reali.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- territorio -->
+    <section id="territorio" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_.95fr]">
+        <div class="reveal order-2 lg:order-1">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-ocean">territorio</p>
+          <h2 class="section-title text-3xl font-semibold text-slate-900 sm:text-4xl">non solo casa: vendi anche il contesto e la sensazione di esserci</h2>
+          <p class="mt-6 text-base leading-8 text-slate-600">qui puoi raccontare spiagge, lungomare, ristoranti, eventi estivi, tramonti, piste ciclabili, centro storico o luoghi iconici vicini. è una sezione che aumenta tantissimo il valore percepito della struttura.</p>
+
+          <div class="mt-8 space-y-4">
+            <div class="rounded-3xl border border-slate-200 p-5">
+              <p class="font-semibold text-slate-900">a pochi passi da [luogo]</p>
+              <p class="mt-2 text-sm leading-7 text-slate-600">descrizione breve del punto di interesse e del vantaggio concreto per chi soggiorna.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 p-5">
+              <p class="font-semibold text-slate-900">esperienze nei dintorni</p>
+              <p class="mt-2 text-sm leading-7 text-slate-600">aperitivi, mare, bici, mercatini, serate, porticciolo, escursioni o itinerari da suggerire.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 p-5">
+              <p class="font-semibold text-slate-900">perfetta per vacanze rilassanti</p>
+              <p class="mt-2 text-sm leading-7 text-slate-600">collega il tono della casa alla qualità del tempo vissuto lì, non solo alle sue caratteristiche tecniche.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal order-1 lg:order-2">
+          <div class="overflow-hidden rounded-[2rem] bg-white shadow-soft">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=80" alt="Paesaggio marino" class="h-[520px] w-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- recensioni -->
+    <section class="bg-deep px-4 py-24 text-white sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal mb-12 max-w-2xl">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-gold">fiducia</p>
+          <h2 class="section-title text-3xl font-semibold text-white sm:text-4xl">spazio per recensioni, feedback o frasi di presentazione</h2>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-3">
+          <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-7 glass">
+            <div class="mb-4 flex gap-1 text-gold"><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg></div>
+            <p class="text-sm leading-7 text-white/78">“inserisci qui una testimonianza reale o un testo emozionale che trasmetta il valore dell’esperienza.”</p>
+            <p class="mt-5 text-sm font-semibold">nome ospite / famiglia</p>
+          </div>
+          <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-7 glass">
+            <div class="mb-4 flex gap-1 text-gold"><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg></div>
+            <p class="text-sm leading-7 text-white/78">“ottima sezione da riempire quando avrai foto vere, dettagli veri e magari feedback ricevuti da chi l’ha vissuta.”</p>
+            <p class="mt-5 text-sm font-semibold">nome ospite / coppia</p>
+          </div>
+          <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-7 glass">
+            <div class="mb-4 flex gap-1 text-gold"><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg><svg class="h-4 w-4"><use href="#icon-star"></use></svg></div>
+            <p class="text-sm leading-7 text-white/78">“ideale per dare più autorevolezza alla landing e renderla meno fredda o troppo solo promozionale.”</p>
+            <p class="mt-5 text-sm font-semibold">nome ospite / gruppo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contatti -->
+    <section id="contatti" class="px-4 py-24 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
+          <div class="reveal rounded-[2rem] bg-deep p-8 text-white shadow-glow sm:p-10">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-gold">Contatti</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">Ti interessa la struttura?</h2>
+            <p class="mt-5 text-sm leading-8 text-white/75">Inserisci qui tutti i riferimenti utili. questa colonna è perfetta per whatsapp, telefono, email, indirizzo e social ufficiali.</p>
+
+            <div class="mt-8 space-y-4 text-sm">
+              <a href="tel:+390000000000" class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 transition hover:bg-white/10">
+                <svg class="h-5 w-5 text-gold"><use href="#icon-phone"></use></svg>
+                <span>[numero di telefono]</span>
+              </a>
+              <a href="mailto:info@esempio.it" class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 transition hover:bg-white/10">
+                <svg class="h-5 w-5 text-gold"><use href="#icon-mail"></use></svg>
+                <span>[email@dominio.it]</span>
+              </a>
+              <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4">
+                <svg class="h-5 w-5 text-gold"><use href="#icon-pin"></use></svg>
+                <span>[indirizzo / località]</span>
+              </div>
+            </div>
+
+            <div class="mt-8 flex gap-3">
+              <a href="#" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:-translate-y-1 hover:bg-white/10"><svg class="h-5 w-5"><use href="#icon-instagram"></use></svg></a>
+              <a href="#" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:-translate-y-1 hover:bg-white/10"><svg class="h-5 w-5"><use href="#icon-facebook"></use></svg></a>
+            </div>
+          </div>
+
+          <div class="reveal rounded-[2rem] bg-white p-8 shadow-soft sm:p-10">
+            <div class="mb-8">
+              <p class="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-ocean">Richiedi informazioni</p>
+              <h3 class="text-2xl font-semibold text-slate-900 sm:text-3xl">Modulo di prenotazione</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">puoi lasciarlo come form visivo oppure collegarlo in seguito a formspree, netlify forms, emailjs o backend personalizzato.</p>
+            </div>
+
+            <form class="grid gap-5 sm:grid-cols-2" onsubmit="event.preventDefault(); handleFakeSubmit();">
+              <label class="block sm:col-span-1">
+                <span class="mb-2 block text-sm font-medium text-slate-700">nome</span>
+                <input type="text" placeholder="il tuo nome" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 outline-none transition focus:border-ocean focus:bg-white" />
+              </label>
+              <label class="block sm:col-span-1">
+                <span class="mb-2 block text-sm font-medium text-slate-700">telefono</span>
+                <input type="text" placeholder="numero di telefono" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 outline-none transition focus:border-ocean focus:bg-white" />
+              </label>
+              <label class="block sm:col-span-2">
+                <span class="mb-2 block text-sm font-medium text-slate-700">email</span>
+                <input type="email" placeholder="la tua email" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 outline-none transition focus:border-ocean focus:bg-white" />
+              </label>
+              <label class="block sm:col-span-2">
+                <span class="mb-2 block text-sm font-medium text-slate-700">messaggio</span>
+                <textarea rows="6" placeholder="scrivi qui la tua richiesta..." class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 outline-none transition focus:border-ocean focus:bg-white"></textarea>
+              </label>
+              <div class="sm:col-span-2 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p id="formMessage" class="text-sm text-slate-500">demo interattiva: collega il form dove preferisci.</p>
+                <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-full bg-deep px-6 py-3.5 font-semibold text-white transition hover:-translate-y-1 hover:shadow-soft">
+                  invia richiesta
+                  <svg class="h-4 w-4"><use href="#icon-arrow"></use></svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="border-t border-slate-200 bg-white px-4 py-10 sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-ocean">villa marina</p>
+        <p class="mt-2 text-sm text-slate-500">landing premium in file unico, pronta da completare con foto e contenuti reali.</p>
+      </div>
+      <div class="flex flex-wrap gap-4 text-sm text-slate-500">
+        <a href="#home" class="hover:text-slate-900 transition">home</a>
+        <a href="#galleria" class="hover:text-slate-900 transition">galleria</a>
+        <a href="#servizi" class="hover:text-slate-900 transition">servizi</a>
+        <a href="#contatti" class="hover:text-slate-900 transition">contatti</a>
+      </div>
+    </div>
+    <div class="text-xs text-slate-400 py-6 text-end pb-0">
+        Sito realizzato da Bagnolini Tommaso<br> Tel.: (+39) 340 158 4862 
+      </div>
+  </footer>
+
+  <!-- lightbox -->
+  <div id="lightbox" class="pointer-events-none fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/88 px-4 opacity-0 transition duration-300">
+    <button id="lightboxClose" class="absolute right-4 top-4 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white">
+      <svg class="h-5 w-5"><use href="#icon-close"></use></svg>
+    </button>
+    <img id="lightboxImage" src="" alt="Anteprima immagine" class="max-h-[88vh] max-w-[92vw] rounded-[1.5rem] object-contain shadow-glow" />
+  </div>
+
+  <!-- js / utils -->
+  <script>
+    const $ = (selector, scope = document) => scope.querySelector(selector)
+    const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)]
+
+    const navbar = $('#navbar')
+    const menuBtn = $('#menuBtn')
+    const mobileMenu = $('#mobileMenu')
+    const formMessage = $('#formMessage')
+    const lightbox = $('#lightbox')
+    const lightboxImage = $('#lightboxImage')
+    const lightboxClose = $('#lightboxClose')
+
+    function updateNavbar() {
+      const scrolled = window.scrollY > 20
+      const wrapper = navbar.querySelector('div > div')
+      wrapper.classList.toggle('nav-scrolled', scrolled)
+      wrapper.classList.toggle('text-slate-900', scrolled)
+      wrapper.classList.toggle('text-white', !scrolled)
+      if (scrolled) {
+        $$('a', wrapper).forEach(a => a.classList.add('hover:text-ocean'))
+      }
+    }
+
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('hidden')
+      const use = menuBtn.querySelector('use')
+      const isOpen = !mobileMenu.classList.contains('hidden')
+      use.setAttribute('href', isOpen ? '#icon-close' : '#icon-menu')
+    }
+
+    function initReveal() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('show')
+        })
+      }, { threshold: 0.12 })
+      $$('.reveal').forEach(el => observer.observe(el))
+    }
+
+    function initParallax() {
+      const parallaxItems = $$('[data-parallax]')
+      const run = () => {
+        const scrollY = window.scrollY
+        parallaxItems.forEach(el => {
+          const speed = Number(el.dataset.parallax || 10)
+          el.style.setProperty('--parallax', `${scrollY / speed}px`)
+        })
+      }
+      run()
+      window.addEventListener('scroll', run, { passive: true })
+    }
+
+    function initGallery() {
+      $$('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const src = item.dataset.src
+          lightboxImage.src = src
+          lightbox.classList.remove('pointer-events-none', 'opacity-0')
+          document.body.classList.add('overflow-hidden')
+        })
+      })
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add('pointer-events-none', 'opacity-0')
+      document.body.classList.remove('overflow-hidden')
+      setTimeout(() => { lightboxImage.src = '' }, 250)
+    }
+
+    function handleFakeSubmit() {
+      formMessage.textContent = 'messaggio demo inviato: collega il form a un servizio reale e sei a posto.'
+      formMessage.classList.remove('text-slate-500')
+      formMessage.classList.add('text-ocean')
+    }
+
+    menuBtn.addEventListener('click', toggleMobileMenu)
+    lightboxClose.addEventListener('click', closeLightbox)
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox()
+    })
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox()
+    })
+    window.addEventListener('scroll', updateNavbar, { passive: true })
+    $$('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+    })
+
+    updateNavbar()
+    initReveal()
+    initParallax()
+    initGallery()
+  </script>
+</body>
+</html>
