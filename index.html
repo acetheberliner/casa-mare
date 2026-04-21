@@ -14,7 +14,7 @@
       <div class="navbar-shell">
         <a href="#home" class="brand">
           <span>
-            <span class="brand-label" data-i18n="brand_label">Casa al mare</span><br />
+            <span class="brand-label" >Casa al mare</span><br />
             <span class="brand-name">Casa Salento</span>
           </span>
         </a>
@@ -85,7 +85,7 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#contatti" class="button button-primary" data-i18n="hero_cta_1">Contattaci su WhatsApp</a>
+            <a href="#contatti" class="button button-primary" data-i18n="hero_cta_1"></a>
             <a href="#galleria" class="button button-secondary" data-i18n="hero_cta_2">Scopri la casa</a>
           </div>
 
@@ -108,7 +108,7 @@
         <div class="hero-card reveal">
           <div class="hero-card-image">
             <img
-              src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1200&q=80"
+              src="https://gcdnb.pbrd.co/images/r1spvjVk7QQ3.jpg"
               alt="Casa Salento vista mare"
               data-i18n-alt="hero_img_alt"
             />
@@ -325,13 +325,20 @@
         <div class="contact-panel reveal">
           <p class="eyebrow" data-i18n="contacts_eyebrow">Contatti</p>
           <h2 class="section-title" data-i18n="contacts_title">Ti interessa Casa Salento?</h2>
-          <p class="contact-text" data-i18n="contacts_text">Per informazioni, disponibilità e prenotazioni puoi contattarci direttamente. Il canale preferito è WhatsApp, così tutto è più semplice e veloce.</p>
+          <p class="contact-text" data-i18n="contacts_text"></p>
 
           <div class="contact-list">
-            <a href="tel:+393209540525" class="contact-link"><span data-i18n="contacts_phone">320 9540525</span></a>
-            <a href="mailto:ale.maura16settembre@gmail.com" class="contact-link"><span data-i18n="contacts_email">ale.maura16settembre@gmail.com</span></a>
-            <div class="contact-link"><span data-i18n="contacts_address">Via Michele La Porta snc, zona Quattro Colonne, Nardò (LE)</span></div>
-            <div class="contact-link"><span data-i18n="contacts_codes">CIS: LE07505291000075799 · CIN: IT075052C200123561</span></div>
+            <a href="https://wa.me/393209540525?text=Ciao%20sono%20interessato%20alla%20Casa%20in%20Salento" target="_blank" class="contact-link">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.52 3.48A11.94 11.94 0 0 0 12.01 0C5.37 0 .02 5.36.02 12c0 2.12.56 4.2 1.63 6.04L0 24l6.12-1.6A11.96 11.96 0 0 0 12 24c6.63 0 12-5.36 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.82c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.63.95.97-3.54-.24-.37A9.78 9.78 0 0 1 2.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.73 9.73 0 0 1 21.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.43-7.36c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.8-1.68-2.1-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.7.3 1.25.48 1.68.62.7.22 1.33.2 1.83.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/>
+              </svg>
+              Scrivici su WhatsApp
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&to=ale.maura16settembre@gmail.com" target="_blank" class="contact-link">
+              <span>📫</span>ale.maura16settembre@gmail.com
+            </a>
+            <div class="contact-link"><span>🏠</span><span data-i18n="contacts_address"></span></div>
+            <div class="contact-link"><span>📋</span><span data-i18n="contacts_codes"></span></div>
           </div>
         </div>
 
@@ -342,26 +349,30 @@
             <p class="section-text" data-i18n="form_text">Compila il modulo oppure scrivici direttamente su WhatsApp per ricevere informazioni su disponibilità, dettagli e organizzazione del soggiorno.</p>
           </div>
 
-          <form class="form-grid" onsubmit="event.preventDefault(); handleFakeSubmit();">
+          <form id="contactForm" class="form-grid">
             <div>
               <label class="form-label" for="name" data-i18n="form_label_name">Nome</label>
-              <input id="name" class="form-input" type="text" placeholder="Il tuo nome" data-i18n-placeholder="form_placeholder_name" />
+              <input id="name" name="name" class="form-input" type="text" data-i18n-placeholder="form_placeholder_name" required />
             </div>
+
             <div>
               <label class="form-label" for="phone" data-i18n="form_label_phone">Telefono</label>
-              <input id="phone" class="form-input" type="text" placeholder="Numero di telefono" data-i18n-placeholder="form_placeholder_phone" />
+              <input id="phone" name="phone" class="form-input" type="text" data-i18n-placeholder="form_placeholder_phone" />
             </div>
+
             <div class="form-field-full">
               <label class="form-label" for="email" data-i18n="form_label_email">Email</label>
-              <input id="email" class="form-input" type="email" placeholder="La tua email" data-i18n-placeholder="form_placeholder_email" />
+              <input id="email" name="email" class="form-input" type="email" data-i18n-placeholder="form_placeholder_email" required />
             </div>
+
             <div class="form-field-full">
               <label class="form-label" for="message" data-i18n="form_label_message">Messaggio</label>
-              <textarea id="message" class="form-textarea" placeholder="Scrivi qui la tua richiesta..." data-i18n-placeholder="form_placeholder_message"></textarea>
+              <textarea id="message" name="message" class="form-textarea" data-i18n-placeholder="form_placeholder_message" required></textarea>
             </div>
+
             <div class="form-field-full form-bottom">
-              <p id="formMessage" class="form-message" data-i18n="form_message_default">Demo interattiva: il contatto preferito per le prenotazioni è WhatsApp.</p>
-              <button type="submit" class="button button-dark" data-i18n="form_submit">Invia richiesta</button>
+              <p id="formMessage" class="form-message"></p>
+              <button id="submitBtn" type="submit" class="button button-dark" data-i18n="form_submit"></button>
             </div>
           </form>
         </div>
@@ -411,8 +422,7 @@
         cta_info: "Richiedi info",
 
         hero_badge: "Vista mare, relax e posizione strategica",
-        hero_title_1: "Casa",
-        hero_title_2: "Salento",
+        
         hero_text: "Dove il sole incontra il mare: la tua oasi di relax a 400 metri dalla riva. Un soggiorno pensato per chi cerca comodità, tranquillità e autenticità, nel cuore di Santa Maria al Bagno.",
         hero_cta_1: "Contattaci su WhatsApp",
         hero_cta_2: "Scopri la casa",
@@ -426,11 +436,11 @@
 
         feedback_eyebrow: "Ospitalità",
         feedback_title: "Un soggiorno pensato per farti sentire subito in vacanza",
-        feedback_text: "Qui trovi alcuni commenti di ospiti che raccontano l’esperienza che Casa Salento vuole offrire.",
+        feedback_text: "Qui trovi alcuni commenti di ospiti che raccontano l’esperienza che Casa Salento offre.",
         feedback_card_1: "“La posizione è ideale per chi vuole mare, relax e comodità: tutto è vicino, ma la casa resta tranquilla e silenziosa.”",
         feedback_card_2: "“Aprire le finestre e vedere il mare, trovare parcheggio davanti a casa e godersi un aperitivo al tramonto sul balcone fa davvero la differenza.”",
         feedback_card_3: "“Una base perfetta per esplorare Santa Maria al Bagno, Porto Selvaggio, Gallipoli e tutto il meglio del Salento ionico.”",
-        feedback_author_1: "Ospiti tipo",
+        feedback_author_1: "Ospiti",
         feedback_author_2: "Coppie",
         feedback_author_3: "Famiglie",
 
@@ -513,12 +523,10 @@
         trust_author_3: "Dettagli che restano impressi",
 
         contacts_eyebrow: "Contatti",
-        contacts_title: "Ti interessa Casa Salento?",
-        contacts_text: "Per informazioni, disponibilità e prenotazioni puoi contattarci direttamente. Il canale preferito è WhatsApp, così tutto è più semplice e veloce.",
-        contacts_phone: "320 9540525",
-        contacts_email: "ale.maura16settembre@gmail.com",
-        contacts_address: "Via Michele La Porta snc, zona Quattro Colonne, Nardò (LE)",
-        contacts_codes: "CIS: LE07505291000075799 · CIN: IT075052C200123561",
+        contacts_title: "Ti interessa questa casa?",
+        contacts_text: "Per informazioni, disponibilità e prenotazioni puoi contattarci direttamente. Il canale preferito è WhatsApp, ma puoi scriverci anche via email se preferisci!",
+        contacts_address: "Via Michele La Porta, Nardò (LE) <br/> Zona <i>'Quattro Colonne'</i>",
+        contacts_codes: "CIS: <i>LE07505291000075799</i> <br/> CIN: <i>IT075052C200123561</i>r",
 
         form_eyebrow: "Richiedi informazioni",
         form_title: "Contattaci per il tuo soggiorno",
@@ -531,7 +539,6 @@
         form_placeholder_phone: "Numero di telefono",
         form_placeholder_email: "La tua email",
         form_placeholder_message: "Scrivi qui la tua richiesta...",
-        form_message_default: "Demo interattiva: il contatto preferito per le prenotazioni è WhatsApp.",
         form_message_sent: "Richiesta inviata in demo: per le prenotazioni il contatto principale resta WhatsApp.",
         form_submit: "Invia richiesta",
 
@@ -552,8 +559,7 @@
         cta_info: "Request info",
 
         hero_badge: "Sea view, relax and strategic location",
-        hero_title_1: "Casa",
-        hero_title_2: "Salento",
+        
         hero_text: "Where the sun meets the sea: your oasis of relaxation just 400 meters from the shore. A stay designed for those seeking comfort, peace and authenticity in the heart of Santa Maria al Bagno.",
         hero_cta_1: "Contact us on WhatsApp",
         hero_cta_2: "Discover the house",
@@ -654,12 +660,10 @@
         trust_author_3: "Memorable details",
 
         contacts_eyebrow: "Contacts",
-        contacts_title: "Interested in Casa Salento?",
-        contacts_text: "For information, availability and bookings you can contact us directly. WhatsApp is the preferred channel, making everything simpler and faster.",
-        contacts_phone: "320 9540525",
-        contacts_email: "ale.maura16settembre@gmail.com",
-        contacts_address: "Via Michele La Porta snc, Quattro Colonne area, Nardò (LE)",
-        contacts_codes: "CIS: LE07505291000075799 · CIN: IT075052C200123561",
+        contacts_title: "Interested in this house?",
+        contacts_text: "For information, availability and bookings you can contact us directly. WhatsApp is the preferred channel, but you can also write to us on email if you prefer!",
+        contacts_address: "Via Michele La Porta, Nardò (LE) <br/> <i>'Quattro Colonne'</i> area",
+        contacts_codes: "CIS: <i>LE07505291000075799</i> <br/> CIN: <i>IT075052C200123561</i>",
 
         form_eyebrow: "Request information",
         form_title: "Contact us for your stay",
@@ -672,7 +676,6 @@
         form_placeholder_phone: "Phone number",
         form_placeholder_email: "Your email",
         form_placeholder_message: "Write your request here...",
-        form_message_default: "Interactive demo: WhatsApp is the preferred contact for bookings.",
         form_message_sent: "Demo request sent: WhatsApp remains the main contact channel for bookings.",
         form_submit: "Send request",
 
@@ -694,6 +697,12 @@
     const lightboxImage = $('#lightboxImage');
     const lightboxClose = $('#lightboxClose');
     const formMessage = $('#formMessage');
+
+    const contactForm = $('#contactForm');
+    const submitBtn = $('#submitBtn');
+
+    // Cambiare mail per le richieste
+    let current_mail = "ale.maura16settembre@gmail.com";
 
     function updateNavbar() {
       navbar.classList.toggle('is-scrolled', window.scrollY > 20);
@@ -779,10 +788,57 @@
       return navigator.language.toLowerCase().startsWith('en') ? 'en' : 'it';
     }
 
-    function handleFakeSubmit() {
+    async function handleFormSubmit(event) {
+      event.preventDefault();
+
       const lang = localStorage.getItem('siteLanguage') || detectInitialLanguage();
-      formMessage.textContent = translations[lang].form_message_sent;
-      formMessage.style.color = 'var(--color-ocean)';
+      const originalBtnText = submitBtn.textContent.trim();
+
+      formMessage.textContent = lang === 'en' ? 'Sending...' : 'Invio in corso...';
+      formMessage.style.color = 'var(--color-text-soft)';
+      submitBtn.disabled = true;
+
+      const formData = new FormData();
+      formData.append('name', $('#name').value.trim());
+      formData.append('phone', $('#phone').value.trim());
+      formData.append('email', $('#email').value.trim());
+      formData.append('message', $('#message').value.trim());
+
+      formData.append('_subject', 'Nuova richiesta da Casa Salento');
+      formData.append('_captcha', 'false');
+      formData.append('_template', 'table');
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/' + current_mail, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json'
+          },
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success === 'true') {
+          formMessage.textContent = lang === 'en'
+            ? 'Request sent successfully.'
+            : 'Richiesta inviata correttamente.';
+
+          formMessage.style.color = 'var(--color-ocean)';
+          contactForm.reset();
+        } else {
+          throw new Error('send_failed');
+        }
+      } catch (error) {
+        formMessage.textContent = lang === 'en'
+          ? 'Error sending request. Please try again later.'
+          : 'Errore durante l’invio della richiesta. Riprova più tardi.';
+
+        formMessage.style.color = '#dc2626';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
     }
 
     menuBtn.addEventListener('click', toggleMobileMenu);
@@ -815,6 +871,7 @@
     });
 
     window.addEventListener('scroll', updateNavbar, { passive: true });
+    contactForm.addEventListener('submit', handleFormSubmit);
 
     updateNavbar();
     initReveal();
