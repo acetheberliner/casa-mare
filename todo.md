@@ -1,21 +1,24 @@
 # DA FARE
 
-- icona sito
-- titolo sito in tab
-- correzione fix "Contatti" label "Scrivici su Whatsapp" translation
-- controllo e modifica testi
-- miglioramento ui recensioni fake
+- favicon sito [FATTO/2]
+- titolo sito in tab [FATTO]
+- correzione fix "Contatti" label "Scrivici su Whatsapp" translation [FATTO]
+- miglioramento ui recensioni fake [FATTO]
 - inserire immagini vere
-- migliorare galleria
-- fix "La struttura" mobile cards
+  - migliorare galleria
+- fix "La struttura" mobile cards [FATTO]
+- check servizi veri o meno
 - controllo e modifica servizi
-- fix ui "Perché sceglierla"
-- remove mailto:
-- edit mail form
-- google maps link
-- fix ui footer
+- remove mailto: [FATTO]
+- edit mail form [FATTO]
+- google maps link [FATTO]
+- fix ui footer [FATTO]
+- fix ui mobile [FATTO]
+- fix label translation facebook [FATTO]
+- nuovo font [FATTO]
 
 # OPZIONALI
 
 - slideshow "Territorio" con immagini
-- consider interactive map
+- consider interactive map [FATTO]
+- fix ui "Perché sceglierla"
