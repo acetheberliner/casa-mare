@@ -365,41 +365,6 @@
             </div>
           </div>
         </div>
-
-        <div class="form-panel reveal">
-          <div class="section-header">
-            <p class="eyebrow" data-i18n="form_eyebrow">Richiedi informazioni</p>
-            <h3 class="section-title" data-i18n="form_title">Contattaci per il tuo soggiorno</h3>
-            <p class="section-text" data-i18n="form_text">Compila il modulo oppure scrivici direttamente su WhatsApp per ricevere informazioni su disponibilità, dettagli e organizzazione del soggiorno.</p>
-          </div>
-
-          <form id="contactForm" class="form-grid">
-            <div>
-              <label class="form-label" for="name" data-i18n="form_label_name">Nome</label>
-              <input id="name" name="name" class="form-input" type="text" data-i18n-placeholder="form_placeholder_name" required />
-            </div>
-
-            <div>
-              <label class="form-label" for="phone" data-i18n="form_label_phone">Telefono</label>
-              <input id="phone" name="phone" class="form-input" type="text" data-i18n-placeholder="form_placeholder_phone" />
-            </div>
-
-            <div class="form-field-full">
-              <label class="form-label" for="email" data-i18n="form_label_email">Email</label>
-              <input id="email" name="email" class="form-input" type="email" data-i18n-placeholder="form_placeholder_email" required />
-            </div>
-
-            <div class="form-field-full">
-              <label class="form-label" for="message" data-i18n="form_label_message">Messaggio</label>
-              <textarea id="message" name="message" class="form-textarea" data-i18n-placeholder="form_placeholder_message" rows="10" required></textarea>
-            </div>
-
-            <div class="form-field-full form-bottom">
-              <p id="formMessage" class="form-message"></p>
-              <button id="submitBtn" type="submit" class="button button-dark" data-i18n="form_submit"></button>
-            </div>
-          </form>
-        </div>
       </div>
     </section>
   </main>
@@ -552,7 +517,7 @@
 
         contacts_eyebrow: "Contatti",
         contacts_title: "Ti interessa questa casa?",
-        contacts_text: "Per informazioni, disponibilità e prenotazioni puoi contattarci direttamente. Il canale preferito è WhatsApp, ma puoi scriverci anche via email se preferisci!",
+        contacts_text: "Il modo più veloce per prenotare o chiedere informazioni è scriverci direttamente su WhatsApp per disponibilità, dettagli sulla casa, consigli sulla zona e organizzazione del soggiorno.",
         whatsapp_write: `<svg class="icon" viewBox="0 0 24 24" fill="currentColor">
           <path d="M20.52 3.48A11.94 11.94 0 0 0 12.01 0C5.37 0 .02 5.36.02 12c0 2.12.56 4.2 1.63 6.04L0 24l6.12-1.6A11.96 11.96 0 0 0 12 24c6.63 0 12-5.36 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.82c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.63.95.97-3.54-.24-.37A9.78 9.78 0 0 1 2.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.73 9.73 0 0 1 21.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.43-7.36c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.8-1.68-2.1-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.7.3 1.25.48 1.68.62.7.22 1.33.2 1.83.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/>
         </svg>Scrivici su WhatsApp`,
@@ -759,16 +724,6 @@
     const lightbox = $('#lightbox');
     const lightboxImage = $('#lightboxImage');
     const lightboxClose = $('#lightboxClose');
-    const formMessage = $('#formMessage');
-
-    const contactForm = $('#contactForm');
-    const submitBtn = $('#submitBtn');
-
-    const footerYear = document.getElementById('footerYear');
-    if (footerYear) footerYear.textContent = new Date().getFullYear();
-
-    // Cambiare mail per le richieste
-    let current_mail = "ale.maura16settembre@gmail.com"; // ale.maura16settembre@gmail.com / tommy.bagnolini@gmail.com
 
     function updateNavbar() {
       navbar.classList.toggle('is-scrolled', window.scrollY > 20);
@@ -854,59 +809,6 @@
       return navigator.language.toLowerCase().startsWith('en') ? 'en' : 'it';
     }
 
-    async function handleFormSubmit(event) {
-      event.preventDefault();
-
-      const lang = localStorage.getItem('siteLanguage') || detectInitialLanguage();
-      const originalBtnText = submitBtn.textContent.trim();
-
-      formMessage.textContent = lang === 'en' ? 'Sending...' : 'Invio in corso...';
-      formMessage.style.color = 'var(--color-text-soft)';
-      submitBtn.disabled = true;
-
-      const formData = new FormData();
-      formData.append('name', $('#name').value.trim());
-      formData.append('phone', $('#phone').value.trim());
-      formData.append('email', $('#email').value.trim());
-      formData.append('message', $('#message').value.trim());
-
-      formData.append('_subject', 'Nuova richiesta da Casa Salento');
-      formData.append('_captcha', 'false');
-      formData.append('_template', 'table');
-
-      try {
-        const response = await fetch('https://formsubmit.co/ajax/' + current_mail, {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json'
-          },
-          body: formData
-        });
-
-        const data = await response.json();
-
-        if (response.ok && data.success === 'true') {
-          formMessage.textContent = lang === 'en'
-            ? 'Request sent successfully.'
-            : 'Richiesta inviata correttamente.';
-
-          formMessage.style.color = 'var(--color-ocean)';
-          contactForm.reset();
-        } else {
-          throw new Error('send_failed');
-        }
-      } catch (error) {
-        formMessage.textContent = lang === 'en'
-          ? 'Error sending request. Please try again later.'
-          : 'Errore durante l’invio della richiesta. Riprova più tardi.';
-
-        formMessage.style.color = '#dc2626';
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalBtnText;
-      }
-    }
-
     menuBtn.addEventListener('click', toggleMobileMenu);
     lightboxClose.addEventListener('click', closeLightbox);
 
@@ -937,7 +839,6 @@
     });
 
     window.addEventListener('scroll', updateNavbar, { passive: true });
-    contactForm.addEventListener('submit', handleFormSubmit);
 
     updateNavbar();
     initReveal();
