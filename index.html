@@ -84,7 +84,7 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#contatti" class="button button-primary" data-i18n="hero_cta_1"></a>
+            <a href="#contatti" class="button button-primary button-whatsapp-hero" data-i18n="hero_cta_1"></a>
             <a href="#struttura" class="button button-secondary" data-i18n="hero_cta_2">Scopri la casa</a>
           </div>
 
@@ -413,14 +413,18 @@
           <p class="contact-text">CIN: IT075052C200123561 <br/> CIS: LE07505291000075799</p>
           <div class="contact-list">
             <div class="link-list">
-              <a href="https://wa.me/393209540525?text=Buongiorno,%20ho%20visualizzato%20il%20vostro%20sito%20web%20e%20sarei%20interessato%20alla%20'Casa%20in%20Salento.'%20Vorrei%20ricevere%20qualche%20informazione%20in%20più,%20Grazie" target="_blank" class="contact-link contact-link-cta" data-i18n="whatsapp_write">
-                
+              <a 
+                href="https://wa.me/393209540525?text=Buongiorno,%20ho%20visualizzato%20il%20vostro%20sito%20web%20e%20sarei%20interessato%20alla%20'Casa%20in%20Salento.'%20Vorrei%20ricevere%20qualche%20informazione%20in%20più,%20Grazie"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button-whatsapp-hero"
+                data-i18n="whatsapp_write">
               </a>
               <a 
                 href="https://www.facebook.com/groups/560460538256511/permalink/1764963694472850/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="contact-link contact-link-cta"
+                class="button button-facebook-hero"
                 data-i18n="facebook_write">
               </a>
             </div>
@@ -454,20 +458,51 @@
     <div class="container footer-shell">
       <div class="footer-bottom">
         <div class="footer-bottom-left">
+          <p class="footer-brand">Casa Salento</p>
           <p class="footer-small" data-i18n="rights"></p>
           <p class="footer-small" data-i18n="disclaimer">
             **I dati inviati tramite il modulo contatti sono usati solo per rispondere alle richieste di soggiorno.
           </p>
         </div>
 
-        <div class="footer-credit">
+        <a 
+          class="footer-credit"
+          href="https://wa.me/393401584862?text=Ciao,%20ho%20visto%20il%20tuo%20sito%20web%20per%20Casa%20Salento.%20Sono%20interessato%20e%20vorrei%20maggiori%20informazioni%20sul%20tuo%20lavoro"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <p class="footer-credit-label" data-i18n="website_ref"></p>
           <p class="footer-credit-name">Bagnolini Tommaso</p>
-          <a class="footer-credit-link" href="https://wa.me/3401584862?text=Ciao,%20ho%20visto%20il%20tuo%20sito%20web%20per%20'Casa%20Salento'.%20Sono%20interessato%20e%20vorrei%20maggiori%20informazioni%20sul%20tuo%20lavoro" target="_blank" data-i18n="whatsapp_me"></a>
-        </div>
+          <span class="footer-credit-link" data-i18n="whatsapp_me"></span>
+        </a>
       </div>
     </div>
   </footer>
+
+  <!-- <footer class="footer">
+    <div class="container footer-minimal">
+      <div class="footer-minimal-top">
+        <p class="footer-brand">Casa Salento</p>
+        <p class="footer-text">
+          Vista mare, posizione strategica e relax autentico a Santa Maria al Bagno, nel cuore del Salento ionico.
+        </p>
+      </div>
+
+      <div class="footer-minimal-bottom">
+        <div class="footer-info">
+          <p>Santa Maria al Bagno, Nardò (LE)</p>
+          <p>CIS: LE07505291000075799</p>
+          <p>CIN: IT075052C200123561</p>
+        </div>
+
+        <div class="footer-credit">
+          <p class="footer-credit-label">Sito realizzato da</p>
+          <p class="footer-credit-name">Bagnolini Tommaso</p>
+          <a class="footer-credit-link" href="tel:+393401584862">(+39) 340 158 4862</a>
+        </div>
+      </div>
+    </div>
+  </footer> -->
 
   <div id="lightbox" class="lightbox">
     <button id="lightboxClose" class="lightbox-close" aria-label="Chiudi immagine">
@@ -492,7 +527,9 @@
         hero_badge: "Vista mare, relax e posizione strategica",
         
         hero_text: "Dove il sole incontra il mare: la tua oasi di relax a 400 metri dalla riva.<br/> Un soggiorno pensato per chi cerca comodità, tranquillità e autenticità, nel cuore di Santa Maria al Bagno (LE).",
-        hero_cta_1: "Contattaci su WhatsApp",
+        hero_cta_1: `<svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.52 3.48A11.94 11.94 0 0 0 12.01 0C5.37 0 .02 5.36.02 12c0 2.12.56 4.2 1.63 6.04L0 24l6.12-1.6A11.96 11.96 0 0 0 12 24c6.63 0 12-5.36 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.82c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.63.95.97-3.54-.24-.37A9.78 9.78 0 0 1 2.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.73 9.73 0 0 1 21.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.43-7.36c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.8-1.68-2.1-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.7.3 1.25.48 1.68.62.7.22 1.33.2 1.83.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/>
+        </svg>Contattaci su WhatsApp`,
         hero_cta_2: "Scopri la casa",
         hero_stat_1: "Posti letto",
         hero_stat_2: "Dal mare",
@@ -649,7 +686,9 @@
         hero_badge: "Sea view, relax and strategic location",
         
         hero_text: "Where the sun meets the sea: your oasis of relaxation just 400 meters from the shore. A stay designed for those seeking comfort, peace and authenticity in the heart of Santa Maria al Bagno (LE).",
-        hero_cta_1: "Contact us on WhatsApp",
+        hero_cta_1: `<svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.52 3.48A11.94 11.94 0 0 0 12.01 0C5.37 0 .02 5.36.02 12c0 2.12.56 4.2 1.63 6.04L0 24l6.12-1.6A11.96 11.96 0 0 0 12 24c6.63 0 12-5.36 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.82c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.63.95.97-3.54-.24-.37A9.78 9.78 0 0 1 2.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.73 9.73 0 0 1 21.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.43-7.36c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.8-1.68-2.1-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.7.3 1.25.48 1.68.62.7.22 1.33.2 1.83.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/>
+        </svg>Contact us on WhatsApp`,
         hero_cta_2: "Discover the house",
         hero_stat_1: "Beds",
         hero_stat_2: "From the sea",
@@ -766,7 +805,7 @@
 
         contacts_eyebrow: "Contacts",
         contacts_title: "Interested in this house?",
-        contacts_text: "For information, availability and bookings you can contact us directly. WhatsApp is the preferred channel, but you can also write to us on email if you prefer!",
+        contacts_text: "The fastest way to book or ask for information is to write to us directly on WhatsApp for availability, details about the house, advice on the area and organization of your stay.",
         whatsapp_write: `<svg class="icon" viewBox="0 0 24 24" fill="currentColor">
           <path d="M20.52 3.48A11.94 11.94 0 0 0 12.01 0C5.37 0 .02 5.36.02 12c0 2.12.56 4.2 1.63 6.04L0 24l6.12-1.6A11.96 11.96 0 0 0 12 24c6.63 0 12-5.36 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.82c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.63.95.97-3.54-.24-.37A9.78 9.78 0 0 1 2.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.73 9.73 0 0 1 21.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.43-7.36c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.8-1.68-2.1-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.7.3 1.25.48 1.68.62.7.22 1.33.2 1.83.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/>
         </svg>Write us on WhatsApp`,
@@ -820,79 +859,24 @@
     const territoryPrev = $('#territoryPrev');
     const territoryNext = $('#territoryNext');
 
-    function initGallerySlider() {
-      if (!galleryTrack || !galleryPrev || !galleryNext) return;
-
-      const getStep = () => {
-        const firstSlide = galleryTrack.querySelector('.gallery-slide');
-        if (!firstSlide) return 300;
-        const gap = parseInt(window.getComputedStyle(galleryTrack).gap || 18, 10);
-        return firstSlide.offsetWidth + gap;
-      };
-
-      galleryPrev.addEventListener('click', () => {
-        galleryTrack.scrollBy({ left: -getStep(), behavior: 'smooth' });
-      });
-
-      galleryNext.addEventListener('click', () => {
-        galleryTrack.scrollBy({ left: getStep(), behavior: 'smooth' });
-      });
-
-      galleryTrack.querySelectorAll('.gallery-slide').forEach((slide) => {
-        slide.addEventListener('click', () => {
-          const src = slide.dataset.src;
-          const img = slide.querySelector('img');
-          if (!src || !lightbox || !lightboxImage) return;
-
-          lightboxImage.src = src;
-          lightboxImage.alt = img?.alt || 'Foto Casa Salento';
-          lightbox.classList.add('is-open');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-    }
-
-    function initTerritorySlider() {
-      if (!territoryTrack || !territoryPrev || !territoryNext) return;
-
-      const getStep = () => {
-        const firstSlide = territoryTrack.querySelector('.gallery-slide');
-        if (!firstSlide) return 300;
-        const gap = parseInt(window.getComputedStyle(territoryTrack).gap || 18, 10);
-        return firstSlide.offsetWidth + gap;
-      };
-
-      territoryPrev.addEventListener('click', () => {
-        territoryTrack.scrollBy({ left: -getStep(), behavior: 'smooth' });
-      });
-
-      territoryNext.addEventListener('click', () => {
-        territoryTrack.scrollBy({ left: getStep(), behavior: 'smooth' });
-      });
-
-      territoryTrack.querySelectorAll('.gallery-slide').forEach((slide) => {
-        slide.addEventListener('click', () => {
-          const src = slide.dataset.src;
-          const img = slide.querySelector('img');
-          if (!src || !lightbox || !lightboxImage) return;
-
-          lightboxImage.src = src;
-          lightboxImage.alt = img?.alt || 'Foto territorio';
-          lightbox.classList.add('is-open');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-    }
-
     function updateNavbar() {
+      if (!navbar) return;
       navbar.classList.toggle('is-scrolled', window.scrollY > 20);
     }
 
     function toggleMobileMenu() {
+      if (!mobileMenu || !menuBtn) return;
+
       mobileMenu.classList.toggle('is-open');
-      const use = menuBtn.querySelector('use');
+
+      const svg = menuBtn.querySelector('svg');
       const isOpen = mobileMenu.classList.contains('is-open');
-      use.setAttribute('href', isOpen ? '#icon-close' : '#icon-menu');
+
+      if (svg) {
+        svg.innerHTML = isOpen
+          ? `<path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6 6 18"/>`
+          : `<path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>`;
+      }
     }
 
     function initReveal() {
@@ -908,11 +892,71 @@
     }
 
     function closeLightbox() {
+      if (!lightbox || !lightboxImage) return;
+
       lightbox.classList.remove('is-open');
       document.body.style.overflow = '';
+
       setTimeout(() => {
         lightboxImage.src = '';
       }, 250);
+    }
+
+    function openLightbox(src, alt = '') {
+      if (!lightbox || !lightboxImage || !src) return;
+
+      lightboxImage.src = src;
+      lightboxImage.alt = alt;
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function updateSliderButtons(track, prevBtn, nextBtn) {
+      if (!track || !prevBtn || !nextBtn) return;
+
+      const maxScrollLeft = track.scrollWidth - track.clientWidth;
+      const currentScroll = Math.ceil(track.scrollLeft);
+
+      prevBtn.disabled = currentScroll <= 0;
+      nextBtn.disabled = currentScroll >= maxScrollLeft - 2;
+    }
+
+    function initSlider(track, prevBtn, nextBtn, fallbackAlt) {
+      if (!track || !prevBtn || !nextBtn) return;
+
+      const getStep = () => {
+        const firstSlide = track.querySelector('.gallery-slide');
+        if (!firstSlide) return 300;
+
+        const gap = parseInt(window.getComputedStyle(track).gap || 18, 10);
+        return firstSlide.offsetWidth + gap;
+      };
+
+      prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: getStep(), behavior: 'smooth' });
+      });
+
+      track.querySelectorAll('.gallery-slide').forEach((slide) => {
+        slide.addEventListener('click', () => {
+          const src = slide.dataset.src;
+          const img = slide.querySelector('img');
+          openLightbox(src, img?.alt || fallbackAlt);
+        });
+      });
+
+      track.addEventListener('scroll', () => {
+        updateSliderButtons(track, prevBtn, nextBtn);
+      }, { passive: true });
+
+      window.addEventListener('resize', () => {
+        updateSliderButtons(track, prevBtn, nextBtn);
+      });
+
+      updateSliderButtons(track, prevBtn, nextBtn);
     }
 
     function setLanguage(lang) {
@@ -957,14 +1001,21 @@
       return navigator.language.toLowerCase().startsWith('en') ? 'en' : 'it';
     }
 
-    menuBtn.addEventListener('click', toggleMobileMenu);
-    lightboxClose.addEventListener('click', closeLightbox);
+    if (menuBtn) {
+      menuBtn.addEventListener('click', toggleMobileMenu);
+    }
 
-    lightbox.addEventListener('click', (event) => {
-      if (event.target === lightbox) {
-        closeLightbox();
-      }
-    });
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    if (lightbox) {
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+    }
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
@@ -974,9 +1025,14 @@
 
     $$('a[href^="#"]').forEach((link) => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.remove('is-open');
-        const use = menuBtn.querySelector('use');
-        use.setAttribute('href', '#icon-menu');
+        if (mobileMenu) mobileMenu.classList.remove('is-open');
+
+        if (menuBtn) {
+          const svg = menuBtn.querySelector('svg');
+          if (svg) {
+            svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>`;
+          }
+        }
       });
     });
 
@@ -990,9 +1046,10 @@
 
     updateNavbar();
     initReveal();
-    initGallerySlider();
-    initTerritorySlider();
+    initSlider(galleryTrack, galleryPrev, galleryNext, 'Foto Casa Salento');
+    initSlider(territoryTrack, territoryPrev, territoryNext, 'Foto territorio');
     setLanguage(detectInitialLanguage());
+
   </script>
 </body>
 </html>

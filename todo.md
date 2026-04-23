@@ -17,8 +17,14 @@
 - fix label translation facebook [FATTO]
 - nuovo font [FATTO]
 
+- bloccare zoom da mobile [FATTO]
+- possibile bug gallery last image [FATTO]
+
 # OPZIONALI
 
-- slideshow "Territorio" con immagini
+- slideshow "Territorio" con immagini [FATTO]
 - consider interactive map [FATTO]
-- fix ui "Perché sceglierla"
+
+- hero con overlay più cinematografico [FATTO]
+- gallery fullscreen più aggressiva
+- CTA sticky whatsapp (mobile) [RIFIUTATO]
