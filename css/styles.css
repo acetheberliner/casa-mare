@@ -658,7 +658,7 @@ button {
   color: var(--color-white);
   background:
     linear-gradient(118deg, rgba(5, 22, 36, 0.93) 10%, rgba(8, 47, 73, 0.62) 46%, rgba(15, 118, 109, 0.18) 100%),
-    url("https://i.ibb.co/QFBq8WDN/panorama.jpg?auto=format&fit=crop&w=1800&q=80");
+    url("../assets/images/panorama.webp");
   background-size: cover;
   background-position: center;
   isolation: isolate;
