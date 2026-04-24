@@ -1,3 +1,8 @@
+const translations = {
+  it: window.TRANSLATIONS_IT,
+  en: window.TRANSLATIONS_EN
+};
+
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
@@ -15,6 +20,35 @@ const galleryNext = $('#galleryNext');
 const territoryTrack = $('#territoryTrack');
 const territoryPrev = $('#territoryPrev');
 const territoryNext = $('#territoryNext');
+
+function applySiteConfig() {
+  const config = window.SITE_CONFIG;
+  if (!config) return;
+
+  const whatsappOwnerUrl = `https://wa.me/${config.ownerPhone}?text=${encodeURIComponent(config.whatsappMessage)}`;
+  const developerWhatsappUrl = `https://wa.me/${config.developerPhone}?text=${encodeURIComponent(config.developerWhatsappMessage)}`;
+
+  const hrefMap = {
+    whatsappOwner: whatsappOwnerUrl,
+    developerWhatsapp: developerWhatsappUrl,
+    facebookPost: config.facebookPostUrl,
+    mapsOpen: config.mapsOpenUrl
+  };
+
+  const srcMap = {
+    mapsEmbed: config.mapsEmbedUrl
+  };
+
+  $$("[data-config-href]").forEach((element) => {
+    const key = element.dataset.configHref;
+    if (hrefMap[key]) element.href = hrefMap[key];
+  });
+
+  $$("[data-config-src]").forEach((element) => {
+    const key = element.dataset.configSrc;
+    if (srcMap[key]) element.src = srcMap[key];
+  });
+}
 
 function updateNavbar() {
     if (!navbar) return;
@@ -206,9 +240,13 @@ $$('[data-lang]').forEach((button) => {
 window.addEventListener('scroll', updateNavbar, { passive: true });
 
 updateNavbar();
+
 initReveal();
 initSlider(galleryTrack, galleryPrev, galleryNext, 'Foto Casa Salento');
 initSlider(territoryTrack, territoryPrev, territoryNext, 'Foto territorio');
+
+applySiteConfig();
+
 setLanguage(detectInitialLanguage());
 if (window.lucide) {
   lucide.createIcons();

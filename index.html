@@ -543,7 +543,7 @@
           <div class="contact-list">
             <div class="link-list">
               <a 
-                href="https://wa.me/393209540525?text=Buongiorno,%20ho%20visualizzato%20il%20vostro%20sito%20web%20e%20sarei%20interessato%20alla%20'Casa%20in%20Salento.'%20Vorrei%20ricevere%20qualche%20informazione%20in%20più,%20Grazie"
+                data-config-href="whatsappOwner"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="button button-whatsapp-hero"
@@ -551,7 +551,7 @@
                 title="Scrivici su WhatsApp per informazioni">
               </a>
               <a 
-                href="https://www.facebook.com/groups/560460538256511/permalink/1764963694472850/" 
+                data-config-href="facebookPost"
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="button button-facebook-hero"
@@ -565,13 +565,13 @@
                 title="Mappa Casa Salento"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=Via%20Michele%20La%20Porta%2C%20Nard%C3%B2%20LE&z=16&output=embed">
+                data-config-src="mapsEmbed">
               </iframe>
 
               <p class="contact-text-small" data-i18n="contacts_address"></p>
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Via%20Michele%20La%20Porta%2C%20Nard%C3%B2%20LE"
+                data-config-href="mapsOpen"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="contact-link map-link contact-link-cta"
@@ -597,7 +597,7 @@
 
         <a 
           class="footer-credit"
-          href="https://wa.me/393401584862?text=Ciao,%20ho%20visto%20il%20tuo%20sito%20web%20per%20Casa%20Salento.%20Sono%20interessato%20e%20vorrei%20maggiori%20informazioni%20sul%20tuo%20lavoro"
+          data-config-href="developerWhatsapp"
           target="_blank"
           rel="noopener noreferrer"
           title="Contatta il creatore del sito per maggiori informazioni"
@@ -620,7 +620,9 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-  <script src="./js/translations.js"></script>
+  <script src="./js/config.js"></script>
+  <script src="./js/translations/it.js"></script>
+  <script src="./js/translations/en.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>
