@@ -1734,3 +1734,16 @@ button {
   height: 18px;
   flex-shrink: 0;
 }
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(4.5rem, 9vw, 3.6rem);
+    line-height: 1.05;
+  }
+
+  .hero-text {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+}
