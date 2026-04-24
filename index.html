@@ -11,7 +11,9 @@
   <meta property="og:url" content="https://casasalento.netlify.app/" />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/x-icon" href="./assets/CS.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
   <!-- HEADER ------------------------------------------------------------------------------------------------------------ -->
@@ -20,18 +22,29 @@
       <div class="navbar-shell">
         <a href="#home" class="brand">
           <span>
-            <span class="brand-label" >Casa al mare</span><br />
+            <span class="brand-label" data-i18n="brand_label"></span><br />
             <span class="brand-name">Casa Salento</span>
           </span>
         </a>
 
         <nav class="center">
           <ul class="nav-links">
-            <li><a href="#struttura" data-i18n="nav_structure">Struttura</a></li>
-            <li><a href="#galleria" data-i18n="nav_gallery">Galleria</a></li>
-            <li><a href="#servizi" data-i18n="nav_services">Servizi</a></li>
-            <li><a href="#territorio" data-i18n="nav_territory">Territorio</a></li>
-            <li><a href="#contatti" data-i18n="nav_contacts">Contatti</a></li>
+            <li><a href="#struttura">
+              <i data-lucide="house"></i>
+              <span data-i18n="nav_structure"></span>
+            </a></li>
+            <li><a href="#territorio">
+              <i data-lucide="images"></i>
+              <span data-i18n="nav_gallery"></span>
+            </a></li>
+            <li><a href="#servizi">
+              <i data-lucide="check-check"></i>
+              <span data-i18n="nav_services"></span>
+            </a></li>
+            <li><a href="#contatti">
+              <i data-lucide="message-circle-more"></i>
+              <span data-i18n="nav_contacts"></span>
+            </a></li>
           </ul>
         </nav>
 
@@ -41,7 +54,10 @@
             <button type="button" class="lang-btn" data-lang="en" aria-label="English"><img src="https://flagpedia.net/data/flags/emoji/twitter/256x256/gb.png" alt="English" style="width: 25px;"></button>
           </div>
 
-          <a href="#contatti" class="button button-primary" data-i18n="cta_info"></a>
+          <a href="#contatti" class="button button-primary">
+            <i data-lucide="messages-square"></i>
+            <span data-i18n="cta_info"></span>
+          </a>
 
           <button id="menuBtn" class="menu-toggle" aria-label="Apri menu">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -76,35 +92,36 @@
         <div class="reveal">
           <div class="hero-badge">
             <span class="hero-badge-dot"></span>
-            <span data-i18n="hero_badge">Vista mare, relax e posizione strategica</span>
+            <span data-i18n="hero_badge"></span>
           </div>
 
           <h1 class="hero-title">
-            <span data-i18n="hero_title_1">Casa</span>
-            <span class="hero-title-gradient" data-i18n="hero_title_2">Salento</span>
+            <span>Casa</span>
+            <span class="hero-title-gradient">Salento</span>
           </h1>
 
-          <p class="hero-text" data-i18n="hero_text">
-            Dove il sole incontra il mare: la tua oasi di relax a 400 metri dalla riva. Un soggiorno pensato per chi cerca comodità, tranquillità e autenticità, nel cuore di Santa Maria al Bagno.
-          </p>
+          <p class="hero-text" data-i18n="hero_text"></p>
 
           <div class="hero-actions">
             <a href="#contatti" class="button button-primary button-whatsapp-hero" data-i18n="hero_cta_1"></a>
-            <a href="#struttura" class="button button-secondary" data-i18n="hero_cta_2">Scopri la casa</a>
+            <a href="#struttura" class="button button-secondary">
+              <i data-lucide="compass"></i>
+              <span data-i18n="hero_cta_2"></span>
+            </a>
           </div>
 
           <div class="hero-stats">
             <div class="stat-card">
-              <div class="stat-value">5</div>
-              <div class="stat-label" data-i18n="hero_stat_1">Posti letto</div>
+              <div class="stat-value"><i data-lucide="bed-double"></i> 5</div>
+              <div class="stat-label" data-i18n="hero_stat_1"></div>
             </div>
             <div class="stat-card">
-              <div class="stat-value">400 m</div>
-              <div class="stat-label" data-i18n="hero_stat_2">Dal mare</div>
+              <div class="stat-value"><i data-lucide="ruler"></i> 400 m</div>
+              <div class="stat-label" data-i18n="hero_stat_2"></div>
             </div>
             <div class="stat-card">
-              <div class="stat-value">60 mq</div>
-              <div class="stat-label" data-i18n="hero_stat_3">Vista mare e balcone</div>
+              <div class="stat-value"><i data-lucide="house"></i> 60 m²</div>
+              <div class="stat-label" data-i18n="hero_stat_3"></div>
             </div>
           </div>
         </div>
@@ -119,12 +136,12 @@
           </div>
           <div class="hero-card-meta">
             <div class="hero-meta-box">
-              <div class="hero-meta-label" data-i18n="hero_meta_label_1">Zona</div>
+              <div class="hero-meta-label" data-i18n="hero_meta_label_1"></div>
               <div class="hero-meta-value">Quattro Colonne, Nardò</div>
             </div>
             <div class="hero-meta-box">
-              <div class="hero-meta-label" data-i18n="hero_meta_label_2">Stile</div>
-              <div class="hero-meta-value" data-i18n="hero_meta_value_2">Moderno, luminoso, mediterraneo</div>
+              <div class="hero-meta-label" data-i18n="hero_meta_label_2"></div>
+              <div class="hero-meta-value" data-i18n="hero_meta_value_2"></div>
             </div>
           </div>
         </div>
@@ -134,9 +151,9 @@
     <section id="feedback" class="section section-dark">
       <div class="container">
         <div class="section-header reveal">
-          <p class="eyebrow" data-i18n="feedback_eyebrow">Ospitalità</p>
-          <h2 class="section-title" data-i18n="feedback_title">Un soggiorno pensato per farti sentire subito in vacanza</h2>
-          <p class="section-text" data-i18n="feedback_text">Qui trovi alcuni commenti di ospiti che raccontano l’esperienza che Casa Salento vuole offrire.</p>
+          <p class="eyebrow" data-i18n="feedback_eyebrow"></p>
+          <h2 class="section-title" data-i18n="feedback_title"></h2>
+          <p class="section-text" data-i18n="feedback_text"></p>
         </div>
 
         <div class="grid-3 feedback-grid">
@@ -144,32 +161,28 @@
             <div class="review-top">
               <div class="review-avatar">GR</div>
               <div class="review-head">
-                <p class="review-author" data-i18n="feedback_author_1">giulia r.</p>
-                <p class="review-meta" data-i18n="feedback_meta_1">agosto 2024 · 5/5</p>
+                <p class="review-author" data-i18n="feedback_author_1"></p>
+                <p class="review-meta" data-i18n="feedback_meta_1"></p>
               </div>
             </div>
 
             <div class="review-stars" aria-label="5 stelle">★★★★★</div>
 
-            <p class="card-text review-text" data-i18n="feedback_card_1">
-              “casa molto comoda e in una zona tranquilla. il mare si raggiunge facilmente e il parcheggio davanti è stato davvero utile, soprattutto al rientro la sera.”
-            </p>
+            <p class="card-text review-text" data-i18n="feedback_card_1"></p>
           </article>
 
           <article class="card card-dark review-card reveal">
             <div class="review-top">
               <div class="review-avatar">ME</div>
               <div class="review-head">
-                <p class="review-author" data-i18n="feedback_author_2">marco e elena</p>
-                <p class="review-meta" data-i18n="feedback_meta_2">luglio 2024 · 5/5</p>
+                <p class="review-author" data-i18n="feedback_author_2"></p>
+                <p class="review-meta" data-i18n="feedback_meta_2"></p>
               </div>
             </div>
 
             <div class="review-stars" aria-label="5 stelle">★★★★★</div>
 
-            <p class="card-text review-text" data-i18n="feedback_card_2">
-              “abbiamo apprezzato tantissimo il balcone e la vista mare. fare colazione fuori al mattino e un aperitivo al tramonto è stata una delle cose più belle del soggiorno.”
-            </p>
+            <p class="card-text review-text" data-i18n="feedback_card_2"></p>
           </article>
 
           <article class="card card-dark review-card reveal">
@@ -192,7 +205,7 @@
     <section id="struttura" class="section">
       <div class="container feature-grid">
         <div class="reveal">
-          <p class="eyebrow" data-i18n="structure_eyebrow"></p>
+          <p class="eyebrow-2" data-i18n="structure_eyebrow"></p>
           <h2 class="section-title" data-i18n="structure_title"></h2>
           <p class="section-text" data-i18n="structure_text"></p>
 
@@ -253,7 +266,6 @@
                 <img src="https://i.ibb.co/C5193g3d/cucina3.jpg" alt="Cucina e zona interna" />
               </button>
 
-
               <button class="gallery-slide" data-src="https://i.ibb.co/mVJ3Yr1S/bagno.jpg">
                 <img src="https://i.ibb.co/mVJ3Yr1S/bagno.jpg" alt="Bagno" />
               </button>
@@ -261,7 +273,6 @@
               <button class="gallery-slide" data-src="https://i.ibb.co/YTVBP18G/fuori.jpg">
                 <img src="https://i.ibb.co/YTVBP18G/fuori.jpg" alt="Vista fuori" />
               </button>
-
 
               <button class="gallery-slide" data-src="https://i.ibb.co/BK3Frbc9/ingresso.jpg">
                 <img src="https://i.ibb.co/BK3Frbc9/ingresso.jpg" alt="Ingresso" />
@@ -275,27 +286,27 @@
     <section class="section section-dark">
       <div class="container stats-grid">
         <article class="stats-box reveal">
-          <div class="stats-box-value">60</div>
+          <div class="stats-box-value"><i data-lucide="house"></i> 60</div>
           <div class="stats-box-label" data-i18n="stat_label_3"></div>
         </article>
         <article class="stats-box reveal">
-          <div class="stats-box-value">5</div>
+          <div class="stats-box-value"><i data-lucide="users"></i> 5</div>
           <div class="stats-box-label" data-i18n="stat_label_4"></div>
         </article>
         <article class="stats-box reveal">
-          <div class="stats-box-value">2</div>
+          <div class="stats-box-value"><i data-lucide="bed-double"></i> 2</div>
           <div class="stats-box-label" data-i18n="stat_label_1"></div>
         </article>
         <article class="stats-box reveal">
-          <div class="stats-box-value">1</div>
+          <div class="stats-box-value"><i data-lucide="toilet"></i> 1</div>
           <div class="stats-box-label" data-i18n="stat_label_2"></div>
         </article>
         <article class="stats-box reveal">
-          <div class="stats-box-value">1</div>
+          <div class="stats-box-value"><i data-lucide="chef-hat"></i> 1</div>
           <div class="stats-box-label" data-i18n="stat_label_5"></div>
         </article>
         <article class="stats-box reveal">
-          <div class="stats-box-value">1</div>
+          <div class="stats-box-value"><i data-lucide="washing-machine"></i> 1</div>
           <div class="stats-box-label" data-i18n="stat_label_6"></div>
         </article>
       </div>
@@ -304,19 +315,67 @@
     <section id="servizi" class="section section-soft">
       <div class="container">
         <div class="section-header reveal">
-          <p class="eyebrow" data-i18n="services_eyebrow"></p>
+          <p class="eyebrow-2" data-i18n="services_eyebrow"></p>
           <h2 class="section-title" data-i18n="services_title"></h2>
         </div>
 
         <div class="grid-4">
-          <article class="card reveal"><h3 class="card-title" data-i18n="service_title_1">Wi-Fi</h3><p class="card-text" data-i18n="service_text_1">Connessione disponibile in casa per restare sempre connessi durante il soggiorno.</p></article>
-          <article class="card reveal"><h3 class="card-title" data-i18n="service_title_2">Aria condizionata e riscaldamento</h3><p class="card-text" data-i18n="service_text_2">Comfort in ogni stagione, per una casa piacevole sia d’estate che nei periodi più freschi.</p></article>
-          <article class="card reveal"><h3 class="card-title" data-i18n="service_title_3">Cucina attrezzata</h3><p class="card-text" data-i18n="service_text_3">Con forno, frigorifero, macchina del caffè e tutto l’essenziale per vivere la casa in autonomia.</p></article>
-          <article class="card reveal"><h3 class="card-title" data-i18n="service_title_4">Parcheggio gratuito</h3><p class="card-text" data-i18n="service_text_4">Disponibile proprio di fronte a casa, comodo e sempre utile al rientro dal mare.</p></article>
-          <article class="card reveal"><h3 class="card-title" data-i18n="service_title_5">Balcone vista tramonto</h3><p class="card-text" data-i18n="service_text_5">Uno spazio esterno molto apprezzato dagli ospiti per aperitivi, pause lente e momenti di relax.</p></article>
-          <article class="card reveal"><h3 class="card-title" data-i18n="service_title_6">Animali ammessi</h3><p class="card-text" data-i18n="service_text_6">La casa accoglie anche gli amici a quattro zampe, così la vacanza può essere davvero per tutti.</p></article>
-          <article class="card reveal"><h3 class="card-title" data-i18n="service_title_7">Sicurezza domestica</h3><p class="card-text" data-i18n="service_text_7">Telecamere esterne, inferriate, rilevatore di gas e monossido, estintore e coperta ignifuga.</p></article>
-          <article class="card reveal"><h3 class="card-title" data-i18n="service_title_8">Kit di benvenuto</h3><p class="card-text" data-i18n="service_text_8">All’arrivo troverai una cassa d’acqua in omaggio e un primo kit di benvenuto già pronto.</p></article>
+          <article class="card reveal">
+            <div class="icon-title">
+              <i data-lucide="wifi"></i>
+              <h3 class="card-title" data-i18n="service_title_1"></h3>
+            </div>
+            <p class="card-text" data-i18n="service_text_1"></p>
+          </article>
+          <article class="card reveal">
+            <div class="icon-title">
+              <i data-lucide="air-vent"></i>
+              <h3 class="card-title" data-i18n="service_title_2"></h3>
+            </div>
+            <p class="card-text" data-i18n="service_text_2"></p>
+          </article>
+          <article class="card reveal">
+            <div class="icon-title">
+              <i data-lucide="chef-hat"></i>
+              <h3 class="card-title" data-i18n="service_title_3"></h3>
+            </div>
+            <p class="card-text" data-i18n="service_text_3"></p>
+          </article>
+          <article class="card reveal">
+            <div class="icon-title">
+              <i data-lucide="circle-parking"></i>
+              <h3 class="card-title" data-i18n="service_title_4"></h3>
+            </div>
+            <p class="card-text" data-i18n="service_text_4"></p>
+          </article>
+          <article class="card reveal">
+            <div class="icon-title">
+              <i data-lucide="sunset"></i>
+              <h3 class="card-title" data-i18n="service_title_5"></h3>
+            </div>
+            <p class="card-text" data-i18n="service_text_5"></p>
+          </article>
+          <article class="card reveal">
+            <div class="icon-title">
+              <i data-lucide="paw-print"></i>
+              <h3 class="card-title" data-i18n="service_title_6"></h3>
+            </div>
+            <p class="card-text" data-i18n="service_text_6"></p>
+          </article>
+          <article class="card reveal">
+            <div class="icon-title">
+              <i data-lucide="shield-check"></i>
+              <h3 class="card-title" data-i18n="service_title_7"></h3>
+            </div>
+            <p class="card-text" data-i18n="service_text_7"></p>
+          </article>
+          <article class="card reveal">
+            <div class="icon-title">
+              <i data-lucide="gift"></i>
+              <h3 class="card-title" data-i18n="service_title_8"></h3>
+            </div>
+            <p class="card-text" data-i18n="service_text_8"></p>
+          </article>
         </div>
       </div>
     </section>
@@ -324,7 +383,7 @@
     <section id="territorio" class="section">
       <div class="container territory-layout">
         <div class="reveal">
-          <p class="eyebrow" data-i18n="territory_eyebrow"></p>
+          <p class="eyebrow-2" data-i18n="territory_eyebrow"></p>
           <h2 class="section-title" data-i18n="territory_title"></h2>
           <p class="section-text" data-i18n="territory_text"></p>
 
@@ -376,6 +435,26 @@
               <button class="gallery-slide" data-src="https://i.ibb.co/23ZrRtyp/grotta.jpg">
                 <img src="https://i.ibb.co/23ZrRtyp/grotta.jpg" alt="Grotta" />
               </button>
+
+              <button class="gallery-slide" data-src="https://i.ibb.co/nqPGn770/frase.jpg">
+                <img src="https://i.ibb.co/nqPGn770/frase.jpg" alt="Frase" />
+              </button>
+
+              <button class="gallery-slide" data-src="https://i.ibb.co/6JbMwt4D/padula.jpg">
+                <img src="https://i.ibb.co/6JbMwt4D/padula.jpg" alt="Padula Bianca" />
+              </button>
+
+              <button class="gallery-slide" data-src="https://i.ibb.co/Xxn5w221/sunset.jpg">
+                <img src="https://i.ibb.co/Xxn5w221/sunset.jpg" alt="Tramonto" />
+              </button>
+
+              <button class="gallery-slide" data-src="https://i.ibb.co/v6XdbWD9/terronia.jpg">
+                <img src="https://i.ibb.co/v6XdbWD9/terronia.jpg" alt="Terronia" />
+              </button>
+              
+              <button class="gallery-slide" data-src="https://i.ibb.co/Hmwp3q5/selvaggio.jpg">
+                <img src="https://i.ibb.co/Hmwp3q5/selvaggio.jpg" alt="Selvaggio" />
+              </button>
             </div>
           </div>
         </div>
@@ -385,25 +464,25 @@
     <section class="section section-dark">
       <div class="container">
         <div class="section-header reveal">
-          <p class="eyebrow" data-i18n="trust_eyebrow">Perché sceglierla</p>
-          <h2 class="section-title" data-i18n="trust_title">Una casa che unisce posizione, panorama e semplicità vera</h2>
+          <p class="eyebrow" data-i18n="trust_eyebrow"></p>
+          <h2 class="section-title" data-i18n="trust_title"></h2>
         </div>
 
         <div class="grid-3">
           <article class="card card-dark reveal">
             <div>✓</div>
-            <p class="card-text" data-i18n="trust_card_1">“Apri le finestre e lasciati sorprendere dalla vista mare: il primo caffè del mattino qui ha tutto un altro sapore.”</p>
-            <p class="card-text"><strong data-i18n="trust_author_1">Esperienza Casa Salento</strong></p>
+            <p class="card-text"><strong data-i18n="trust_author_1"></strong></p>
+            <p class="card-text" data-i18n="trust_card_1"></p>
           </article>
           <article class="card card-dark reveal">
             <div>✓</div>
-            <p class="card-text" data-i18n="trust_card_2">“Parcheggio gratuito davanti a casa, zona tranquilla e tutto quello che serve vicino: la vacanza scorre davvero senza pensieri.”</p>
-            <p class="card-text"><strong data-i18n="trust_author_2">Comodità quotidiana</strong></p>
+            <p class="card-text"><strong data-i18n="trust_author_2"></strong></p>
+            <p class="card-text" data-i18n="trust_card_2"></p>
           </article>
           <article class="card card-dark reveal">
             <div>✓</div>
-            <p class="card-text" data-i18n="trust_card_3">“Di fronte alla casa c’è anche un autentico trullo pugliese: un dettaglio unico che rende ancora più speciale il panorama.”</p>
-            <p class="card-text"><strong data-i18n="trust_author_3">Dettagli che restano impressi</strong></p>
+            <p class="card-text"><strong data-i18n="trust_author_3"></strong></p>
+            <p class="card-text" data-i18n="trust_card_3"></p>
           </article>
         </div>
       </div>
@@ -412,8 +491,8 @@
     <section id="contatti" class="section">
       <div class="container contact-layout">
         <div class="contact-panel reveal">
-          <p class="eyebrow" data-i18n="contacts_eyebrow">Contatti</p>
-          <h2 class="section-title" data-i18n="contacts_title">Ti interessa Casa Salento?</h2>
+          <p class="eyebrow" data-i18n="contacts_eyebrow"></p>
+          <h2 class="section-title" data-i18n="contacts_title"></h2>
           <p class="contact-text" data-i18n="contacts_text"></p>
           <p class="contact-text">CIN: IT075052C200123561 <br/> CIS: LE07505291000075799</p>
           <div class="contact-list">
@@ -449,8 +528,8 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="contact-link map-link contact-link-cta">
-                <span>📍</span>
-                Apri su Google Maps
+                <i data-lucide="map-pin"></i>
+                <span data-i18n="open_maps"></span>
               </a>
             </div>
           </div>
@@ -465,9 +544,7 @@
         <div class="footer-bottom-left">
           <p class="footer-brand">Casa Salento</p>
           <p class="footer-small" data-i18n="rights"></p>
-          <p class="footer-small" data-i18n="disclaimer">
-            **I dati inviati tramite il modulo contatti sono usati solo per rispondere alle richieste di soggiorno.
-          </p>
+          <p class="footer-small" data-i18n="disclaimer"></p>
         </div>
 
         <a 
@@ -496,15 +573,13 @@
   <script>
     const translations = {
       it: {
-        meta_title: "Casa Salento | Vista mare e relax a Santa Maria al Bagno",
-        meta_description: "A 400 metri dal mare, Casa Salento è la tua oasi di relax a Santa Maria al Bagno. Vista mare, 5 posti letto, balcone per aperitivi al tramonto e posizione ideale per vivere il Salento autentico.",
         brand_label: "Casa al mare",
         nav_structure: "Struttura",
         nav_gallery: "Galleria",
         nav_services: "Servizi",
         nav_territory: "Territorio",
         nav_contacts: "Contatti",
-        cta_info: "Richiedi informazioni",
+        cta_info: `Richiedi informazioni`,
 
         hero_badge: "Vista mare, relax e posizione strategica",
         
@@ -512,10 +587,10 @@
         hero_cta_1: `<svg class="icon" viewBox="0 0 24 24" fill="currentColor">
           <path d="M20.52 3.48A11.94 11.94 0 0 0 12.01 0C5.37 0 .02 5.36.02 12c0 2.12.56 4.2 1.63 6.04L0 24l6.12-1.6A11.96 11.96 0 0 0 12 24c6.63 0 12-5.36 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.82c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.63.95.97-3.54-.24-.37A9.78 9.78 0 0 1 2.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.73 9.73 0 0 1 21.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.43-7.36c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.8-1.68-2.1-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.7.3 1.25.48 1.68.62.7.22 1.33.2 1.83.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/>
         </svg>Contattaci su WhatsApp`,
-        hero_cta_2: "Scopri la casa",
+        hero_cta_2: `Scopri la casa`,
         hero_stat_1: "Posti letto",
         hero_stat_2: "Dal mare",
-        hero_stat_3: "Vista mare e balcone",
+        hero_stat_3: "Di superficie",
         hero_meta_label_1: "Zona",
         hero_meta_label_2: "Stile",
         hero_meta_value_2: "Moderno, luminoso, mediterraneo",
@@ -523,7 +598,7 @@
 
         feedback_eyebrow: "Ospitalità",
         feedback_title: "Un soggiorno pensato per farti sentire subito in vacanza",
-        feedback_text: "Qui trovi alcuni commenti di ospiti che raccontano l’esperienza che Casa Salento offre.",
+        feedback_text: "Esperienze vere, raccontate da chi ci è stato.",
         
         feedback_card_1: "“Casa molto comoda e in una zona tranquilla. Il mare si raggiunge facilmente e il parcheggio davanti casa è davvero utile, soprattutto al rientro la sera.”",
         feedback_card_2: "“Abbiamo apprezzato tantissimo il balcone e la vista mare. Fare colazione fuori al mattino e un aperitivo al tramonto è stata una delle cose più belle del soggiorno.”",
@@ -537,9 +612,6 @@
         feedback_meta_2: "Luglio 2024",
         feedback_meta_3: "Settembre 2024",
 
-        features_eyebrow: "Caratteristiche",
-        feature_title_1: "Posizione strategica",
-        feature_text_1: "A 400 metri dal mare, nella zona Quattro Colonne di Nardò, vicina a spiagge, passeggiate, ristoranti, servizi utili e luoghi simbolo del Salento.",
         feature_title_2: "Atmosfera unica",
         feature_text_2: "Vista mare, balcone spazioso per aperitivi al tramonto, posizione silenziosa e un contesto autentico che invita a rallentare davvero.",
         feature_title_3: "Contatto diretto",
@@ -557,11 +629,6 @@
         structure_box_title_4: "Sicurezza e cura",
         structure_box_text_4: "Telecamere esterne per sicurezza, inferriate, rilevatore di gas e monossido, estintore e coperta ignifuga.",
 
-        img_alt_1: "Camera elegante",
-        img_alt_2: "Interni casa",
-        img_alt_3: "Zona living",
-        img_alt_4: "Dettaglio casa",
-
         stat_label_1: "Camere da letto",
         stat_label_2: "Bagno",
         stat_label_3: "Metri quadri",
@@ -569,27 +636,19 @@
         stat_label_5: "Cucina abitabile",
         stat_label_6: "Lavanderia", 
 
-        gallery_eyebrow: "Galleria",
         gallery_pics: "Foto della casa",
-        gallery_title: "Spazi pronti per raccontare la casa in modo autentico",
-        gallery_text: "Qui puoi sostituire le immagini demo con foto reali della struttura, del balcone vista mare e degli interni, mantenendo un layout forte sia su desktop sia su mobile.",
-        gallery_alt_1: "Esterno villa",
-        gallery_alt_2: "Soggiorno",
-        gallery_alt_3: "Camera",
-        gallery_alt_4: "Interni moderni",
-        gallery_alt_5: "Dettagli casa",
 
         services_eyebrow: "Servizi e comfort",
-        services_title: "Tutto quello che serve per sentirsi comodi fin dal primo giorno",
+        services_title: "Qui non ti manca nulla",
         service_title_1: "Wi-Fi",
         service_text_1: "Connessione disponibile in casa per restare sempre connessi durante il soggiorno.",
-        service_title_2: "Aria condizionata e riscaldamento",
+        service_title_2: "Clima controllato",
         service_text_2: "Comfort in ogni stagione, per una casa piacevole sia d’estate che nei periodi più freschi.",
         service_title_3: "Cucina attrezzata",
         service_text_3: "Con forno, frigorifero, macchina del caffè e tutto l’essenziale per vivere la casa in autonomia.",
         service_title_4: "Parcheggio gratuito",
         service_text_4: "Disponibile proprio di fronte a casa, comodo e sempre utile al rientro dal mare.",
-        service_title_5: "Balcone vista tramonto",
+        service_title_5: "Balcone con vista",
         service_text_5: "Uno spazio esterno molto apprezzato dagli ospiti per aperitivi, pause lente e momenti di relax.",
         service_title_6: "Animali ammessi",
         service_text_6: "La casa accoglie anche gli amici a quattro zampe, così la vacanza può essere davvero per tutti.",
@@ -608,10 +667,9 @@
         territory_box_text_2: "Nardò, Gallipoli, il Museo dell’Accoglienza, l’Acquario del Salento, i mercatini della domenica e le sagre estive raccontano l’anima del territorio.",
         territory_box_title_3: "Esperienze da vivere davvero",
         territory_box_text_3: "Beach club, piste ciclabili, aperitivi al tramonto al Matam, cucina di pesce freschissimo e persino immersioni guidate per scoprire i fondali della costa.",
-        territory_alt_1: "Paesaggio marino del Salento",
 
         trust_eyebrow: "Perché sceglierla",
-        trust_title: "Una casa che unisce posizione, panorama e semplicità vera",
+        trust_title: "Posizione, panorama e semplicità vera",
         trust_card_1: "“Apri le finestre e lasciati sorprendere dalla vista mare: il primo caffè del mattino qui ha tutto un altro sapore.”",
         trust_author_1: "Esperienza Casa Salento",
         trust_card_2: "“Parcheggio gratuito davanti a casa, zona tranquilla e tutto quello che serve vicino: la vacanza scorre davvero senza pensieri.”",
@@ -629,36 +687,15 @@
           <path d="M22 12a10 10 0 1 0-11.56 9.87v-6.98H7.9V12h2.54V9.8c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.9h-2.34v6.98A10 10 0 0 0 22 12z"/>
         </svg>Visualizza su Facebook`,
         contacts_address: "Via Michele La Porta, Nardò (LE) <br/> Zona <i>'Quattro Colonne'</i>",
-        contacts_codes: "CIS: <i>LE07505291000075799</i> <br/> CIN: <i>IT075052C200123561</i>",
+        open_maps: "Apri su Google Maps",
 
-        form_eyebrow: "Richiedi informazioni",
-        form_title: "Scrivici una mail",
-        form_text: "Compila il modulo oppure scrivici direttamente su WhatsApp per ricevere informazioni su disponibilità, dettagli e organizzazione del soggiorno.",
-        form_label_name: "Nome",
-        form_label_phone: "Telefono",
-        form_label_email: "Email",
-        form_label_message: "Messaggio",
-        form_placeholder_name: "Il tuo nome",
-        form_placeholder_phone: "Numero di telefono",
-        form_placeholder_email: "La tua email",
-        form_placeholder_message: "Scrivi qui la tua richiesta...",
-        form_message_sent: "Richiesta inviata in demo: per le prenotazioni il contatto principale resta WhatsApp.",
-        form_submit: "Invia richiesta",
-
-        footer_text: "Vista mare, posizione strategica e relax autentico a Santa Maria al Bagno, nel cuore del Salento ionico.",
-        footer_link_1: "Home",
-        footer_link_2: "Galleria",
-        footer_link_3: "Servizi",
-        footer_link_4: "Contatti",
         rights: `© 2026 - Casa Salento. Tutti i diritti riservati.`,
-        disclaimer: "** I dati inviati tramite il modulo contatti sono usati solo per rispondere alle richieste di soggiorno. Non saranno utilizzati per altre finalità. **",
+        disclaimer: "** I dati condivisi tramite WhatsApp saranno usati solo per rispondere alle richieste di soggiorno. Non saranno utilizzati per altre finalità. **",
         website_ref: "Sito realizzato da",
-        whatsapp_me: "Scrivmi su WhatsApp",
+        whatsapp_me: "Clicca per contattarmi",
       },
 
       en: {
-        meta_title: "Casa Salento | Sea view and relaxation in Santa Maria al Bagno",
-        meta_description: "Just 400 meters from the sea, Casa Salento is your relaxing oasis in Santa Maria al Bagno. It offers sea views, sleeps five, a balcony for sunset aperitifs, and an ideal location for experiencing the authentic Salento.",
         brand_label: "Seaside home",
         nav_structure: "Property",
         nav_gallery: "Gallery",
@@ -673,10 +710,10 @@
         hero_cta_1: `<svg class="icon" viewBox="0 0 24 24" fill="currentColor">
           <path d="M20.52 3.48A11.94 11.94 0 0 0 12.01 0C5.37 0 .02 5.36.02 12c0 2.12.56 4.2 1.63 6.04L0 24l6.12-1.6A11.96 11.96 0 0 0 12 24c6.63 0 12-5.36 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.82c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.63.95.97-3.54-.24-.37A9.78 9.78 0 0 1 2.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.73 9.73 0 0 1 21.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.43-7.36c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.8-1.68-2.1-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.7.3 1.25.48 1.68.62.7.22 1.33.2 1.83.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/>
         </svg>Contact us on WhatsApp`,
-        hero_cta_2: "Discover the house",
+        hero_cta_2: `Discover the house`,
         hero_stat_1: "Beds",
         hero_stat_2: "From the sea",
-        hero_stat_3: "Sea view and balcony",
+        hero_stat_3: "Of surface area",
         hero_meta_label_1: "Area",
         hero_meta_label_2: "Style",
         hero_meta_value_2: "Modern, bright, Mediterranean",
@@ -705,17 +742,10 @@
         feedback_author_2: "Couples",
         feedback_author_3: "Families",
 
-        features_eyebrow: "Highlights",
-        feature_title_1: "Strategic location",
-        feature_text_1: "Just 400 meters from the sea, in the Quattro Colonne area of Nardò, close to beaches, promenades, restaurants, useful services and iconic Salento spots.",
-        feature_title_2: "Unique atmosphere",
-        feature_text_2: "Sea view, a spacious balcony for sunset aperitifs, a quiet position and an authentic setting that invites you to truly slow down.",
-        feature_title_3: "Direct contact",
-        feature_text_3: "Bookings are mainly managed via WhatsApp, with fast and easy contact for information, availability and stay planning.",
-
         structure_eyebrow: "The property",
         structure_title: "Comfortable, bright and designed for a stress-free holiday",
         structure_text: "Casa Salento is a 60 sqm home with 2 bedrooms, 1 bathroom, 5 total rooms and space for up to 5 guests. It is ideal for anyone who wants to enjoy Salento in a quiet area, with sea view, balcony and free parking right in front of the house.",
+        
         structure_box_title_1: "Sea view and balcony",
         structure_box_text_1: "The spacious balcony is perfect for slow breakfasts, sunset aperitifs and relaxing moments after the beach.",
         structure_box_title_2: "Essential comforts",
@@ -725,11 +755,6 @@
         structure_box_title_4: "Safety and care",
         structure_box_text_4: "Outdoor security cameras, window grilles, gas and carbon monoxide detector, fire extinguisher and fire blanket.",
 
-        img_alt_1: "Elegant bedroom",
-        img_alt_2: "Home interior",
-        img_alt_3: "Living area",
-        img_alt_4: "House detail",
-
         stat_label_1: "Bedrooms",
         stat_label_2: "Bathroom",
         stat_label_3: "Squared meters",
@@ -737,21 +762,13 @@
         stat_label_5: "Kitchen",
         stat_label_6: "Laundry", 
 
-        gallery_eyebrow: "Gallery",
         gallery_pics: "Photos of the house",
-        gallery_title: "Spaces ready to tell the story of the house in an authentic way",
-        gallery_text: "Here you can replace the demo images with real photos of the property, the sea-view balcony and the interiors, while keeping a strong layout on both desktop and mobile.",
-        gallery_alt_1: "Villa exterior",
-        gallery_alt_2: "Living room",
-        gallery_alt_3: "Bedroom",
-        gallery_alt_4: "Modern interiors",
-        gallery_alt_5: "House details",
 
         services_eyebrow: "Services and comfort",
-        services_title: "Everything you need to feel comfortable from day one",
+        services_title: "Everything you need, right here",
         service_title_1: "Wi-Fi",
         service_text_1: "Internet connection available in the house so you can stay connected throughout your stay.",
-        service_title_2: "Air conditioning and heating",
+        service_title_2: "Controlled climate",
         service_text_2: "Comfort in every season, for a pleasant home both in summer and in cooler periods.",
         service_title_3: "Equipped kitchen",
         service_text_3: "With oven, fridge, coffee machine and all the essentials to enjoy the house independently.",
@@ -776,7 +793,6 @@
         territory_box_text_2: "Nardò, Gallipoli, the Museum of Hospitality, the Salento Aquarium, the Sunday markets and summer festivals all tell the story of the area.",
         territory_box_title_3: "Experiences worth living",
         territory_box_text_3: "Beach clubs, cycle paths, sunset aperitifs at Matam, fresh seafood cuisine and even guided diving experiences to discover the coastline seabed.",
-        territory_alt_1: "Salento seaside landscape",
 
         trust_eyebrow: "Why choose it",
         trust_title: "A house that combines location, panorama and genuine simplicity",
@@ -797,31 +813,12 @@
           <path d="M22 12a10 10 0 1 0-11.56 9.87v-6.98H7.9V12h2.54V9.8c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.9h-2.34v6.98A10 10 0 0 0 22 12z"/>
         </svg>View post on Facebook`,
         contacts_address: "Via Michele La Porta, Nardò (LE) <br/> <i>'Quattro Colonne'</i> area",
-        contacts_codes: "CIS: <i>LE07505291000075799</i> <br/> CIN: <i>IT075052C200123561</i>",
+        open_maps: "Open in Google Maps",
 
-        form_eyebrow: "Request information",
-        form_title: "Send us an email",
-        form_text: "Fill out the form or write to us directly on WhatsApp to receive information about availability, details and stay planning.",
-        form_label_name: "Name",
-        form_label_phone: "Phone",
-        form_label_email: "Email",
-        form_label_message: "Message",
-        form_placeholder_name: "Your name",
-        form_placeholder_phone: "Phone number",
-        form_placeholder_email: "Your email",
-        form_placeholder_message: "Write your request here...",
-        form_message_sent: "Demo request sent: WhatsApp remains the main contact channel for bookings.",
-        form_submit: "Send request",
-
-        footer_text: "Sea view, strategic location and authentic relaxation in Santa Maria al Bagno, in the heart of Ionian Salento.",
-        footer_link_1: "Home",
-        footer_link_2: "Gallery",
-        footer_link_3: "Services",
-        footer_link_4: "Contacts",
         rights: `© 2026 - Casa Salento. All rights reserved.`,
-        disclaimer: "** The data sent through the contact form is used only to respond to requests for accommodation. It is not used for any other purpose **",
+        disclaimer: "** The data shared through WhatsApp will be used only to respond to requests for accommodation. It is not used for any other purpose **",
         website_ref: "Website developed by",
-        whatsapp_me: "Write me on WhatsApp",
+        whatsapp_me: "Click here to contact me",
       }
     };
 
@@ -1033,7 +1030,7 @@
     initSlider(galleryTrack, galleryPrev, galleryNext, 'Foto Casa Salento');
     initSlider(territoryTrack, territoryPrev, territoryNext, 'Foto territorio');
     setLanguage(detectInitialLanguage());
-
+    lucide.createIcons();
   </script>
 </body>
 </html>

@@ -3,11 +3,11 @@
   --color-bg-soft: #f6efe7;
   --color-surface: #ffffff;
   --color-surface-dark: rgba(255, 255, 255, 0.08);
-  --color-text: #0f172a;
+  --color-text: #082f49;
   --color-text-soft: #5b6472;
   --color-white: #ffffff;
   --color-deep: #082f49;
-  --color-ocean: #0f766e;
+  --color-ocean: #0b5e96;
   --color-gold: #d6a85f;
   --color-border: #e7e5e4;
   --color-overlay: rgba(8, 47, 73, 0.78);
@@ -18,7 +18,7 @@
   --radius-lg: 32px;
   --container: 1200px;
   --transition: 0.3s ease;
-  --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-title: 'Playfair Display', serif;
 }
 
@@ -27,6 +27,12 @@
   margin: 0;
   padding: 0;
   touch-action: manipulation;
+}
+
+[data-lucide] {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
 }
 
 html {
@@ -212,6 +218,16 @@ button {
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+
+.eyebrow-2 {
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
   color: var(--color-ocean);
 }
 
@@ -232,7 +248,7 @@ button {
   height: 4px;
   margin-top: 16px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--color-gold), var(--color-ocean));
+  background: linear-gradient(90deg, var(--color-ocean) 0%, #fff 50%, var(--color-gold) 75%);
 }
 
 .section-text {
@@ -328,14 +344,29 @@ button {
 }
 
 .nav-links a {
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: capitalize;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
   transition: var(--transition);
+  padding: 6px 10px;
+  border-radius: 999px;
 }
 
 .nav-links a:hover {
-  color: var(--color-gold);
+  color: var(--color-ocean);
+}
+
+/* icona lucide */
+.nav-links a [data-lucide] {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.8;
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .nav-actions {
@@ -800,8 +831,20 @@ button {
 }
 
 .stat-value {
-  font-size: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 32px; /* se non lo hai già */
   font-weight: 700;
+}
+
+.stat-value [data-lucide] {
+  width: 30px;
+  height: 30px;
+  stroke-width: 2;
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .stat-label {
@@ -858,7 +901,6 @@ button {
 .card-title {
   font-size: 20px;
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 .card-text {
@@ -871,6 +913,12 @@ button {
 .card-dark .card-text,
 .card-dark .card-title {
   color: var(--color-white);
+}
+
+.icon-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .feature-grid {
@@ -892,13 +940,12 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-surface);
-  box-shadow: var(--shadow-soft);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .feature-item-title {
   font-size: 15px;
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 .feature-item-text {
@@ -950,9 +997,19 @@ button {
 }
 
 .stats-box-value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 42px;
   font-weight: 700;
   color: var(--color-gold);
+}
+
+.stats-box-value [data-lucide] {
+  width: 34px;
+  height: 34px;
+  stroke-width: 2.2;
+  opacity: 0.9;
 }
 
 .stats-box-label {
@@ -1017,6 +1074,7 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-surface);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .territory-item-title {
@@ -1474,6 +1532,11 @@ button {
   transform: translateY(0);
 }
 
+.card.reveal.is-visible, .card.card-dark.reveal.is-visible {
+  transform: translateY(0);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
 .icon {
   width: 20px;
   height: 20px;
@@ -1671,5 +1734,3 @@ button {
   height: 18px;
   flex-shrink: 0;
 }
-
-
