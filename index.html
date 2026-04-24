@@ -4,18 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casa vacanze a Santa Maria al Bagno, Salento | Vista mare e relax</title>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="canonical" href="https://casasalento.netlify.app/">
+  <link rel="stylesheet" href="./css/styles.css" />
+
   <meta name="title" content="Casa vacanze a Santa Maria al Bagno, Salento | Vista mare e relax">
-  <meta property="og:title" content="Casa vacanze a Santa Maria al Bagno, Salento | Vista mare e relax" />
   <meta name="description" content="Casa vacanze a Santa Maria al Bagno, Salento. Vista mare, 5 posti letto, a 400m dalla spiaggia. Ideale per relax e vacanze in Puglia.">
+  
+  <meta property="og:title" content="Casa vacanze a Santa Maria al Bagno, Salento | Vista mare e relax" />
   <meta property="og:description" content="A 400 metri dal mare, con vista mozzafiato e posizione perfetta per esplorare il Salento." />
-  <meta property="og:image" content="./assets/images/cs.webp" />
+  <meta property="og:image" content="./assets/images/panorama.webp" />
   <meta property="og:url" content="https://casasalento.netlify.app/" />
   <meta property="og:type" content="website" />
-  <link rel="icon" type="image/x-icon" href="./assets/images/cs.webp">
-  <link rel="canonical" href="https://casasalento.netlify.app/">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Casa Salento">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Casa vacanze a Santa Maria al Bagno, Salento | Vista mare e relax">
+  <meta name="twitter:description" content="Casa vacanze a Santa Maria al Bagno, Salento. Vista mare, 5 posti letto, a 400m dalla spiaggia. Ideale per relax e vacanze in Puglia.">
+  <meta name="twitter:image" content="./assets/images/panorama.webp">
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/styles.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,7 +43,7 @@
     },
     "telephone": "+393209540525",
     "url": "https://casasalento.netlify.app/",
-    "image": "./assets/images/panorama.webp"
+    "image": "favicon.ico"
   }
   </script>
 </head>
@@ -40,7 +52,7 @@
   <header id="navbar" class="navbar">
     <div class="container">
       <div class="navbar-shell">
-        <a href="#home" class="brand">
+        <a href="#home" class="brand" title="Torna alla home di Casa Salento">
           <span>
             <span class="brand-label" data-i18n="brand_label"></span><br />
             <span class="brand-name">Casa Salento</span>
@@ -49,19 +61,19 @@
 
         <nav class="center">
           <ul class="nav-links">
-            <li><a href="#struttura">
+            <li><a href="#struttura" title="Visualizza le caratteristiche della casa">
               <i data-lucide="house"></i>
               <span data-i18n="nav_structure"></span>
             </a></li>
-            <li><a href="#territorio">
+            <li><a href="#territorio" title="Guarda le foto dei luoghi circostanti">
               <i data-lucide="images"></i>
               <span data-i18n="nav_gallery"></span>
             </a></li>
-            <li><a href="#servizi">
+            <li><a href="#servizi" title="Visualizza i servizi disponibili">
               <i data-lucide="check-check"></i>
               <span data-i18n="nav_services"></span>
             </a></li>
-            <li><a href="#contatti">
+            <li><a href="#contatti" title="Contattaci per maggiori informazioni">
               <i data-lucide="message-circle-more"></i>
               <span data-i18n="nav_contacts"></span>
             </a></li>
@@ -74,7 +86,7 @@
             <button type="button" class="lang-btn" data-lang="en" aria-label="English"><img src="https://flagpedia.net/data/flags/emoji/twitter/256x256/gb.png" alt="English" style="width: 25px;"></button>
           </div>
 
-          <a href="#contatti" class="button button-primary">
+          <a href="#contatti" class="button button-primary" title="Contattaci per maggiori informazioni">
             <i data-lucide="messages-square"></i>
             <span data-i18n="cta_info"></span>
           </a>
@@ -94,12 +106,23 @@
         </div>
 
         <nav>
-          <a href="#struttura" data-i18n="nav_structure"></a>
-          <a href="#galleria" data-i18n="nav_gallery"></a>
-          <a href="#servizi" data-i18n="nav_services"></a>
-          <a href="#territorio" data-i18n="nav_territory"></a>
-          <a href="#contatti" data-i18n="nav_contacts"></a>
-          <a href="#contatti" class="button button-blue" data-i18n="cta_info"></a>
+          <a href="#struttura" title="Visualizza le caratteristiche della casa">
+            <i data-lucide="house"></i>
+            <span data-i18n="nav_structure"></span>
+          </a>
+          <a href="#territorio" title="Guarda le foto dei luoghi circostanti">
+            <i data-lucide="images"></i>
+            <span data-i18n="nav_gallery"></span>
+          </a>
+          <a href="#servizi" title="Visualizza i servizi disponibili">
+            <i data-lucide="check-check"></i>
+            <span data-i18n="nav_services"></span>
+          </a>
+          <a href="#contatti" title="Contattaci per maggiori informazioni">
+            <i data-lucide="message-circle-more"></i>
+            <span data-i18n="nav_contacts"></span>
+          </a>
+          <a href="#contatti" class="button button-blue" data-i18n="cta_info" title="Contattaci per maggiori informazioni"></a>
         </nav>
       </div>
     </div>
@@ -123,8 +146,8 @@
           <p class="hero-text" data-i18n="hero_text"></p>
 
           <div class="hero-actions">
-            <a href="#contatti" class="button button-primary button-whatsapp-hero" data-i18n="hero_cta_1"></a>
-            <a href="#struttura" class="button button-secondary">
+            <a href="#contatti" class="button button-primary button-whatsapp-hero" data-i18n="hero_cta_1" title="Contattaci per maggiori informazioni"></a>
+            <a href="#struttura" class="button button-secondary" title="Scopri la struttura della casa">
               <i data-lucide="compass"></i>
               <span data-i18n="hero_cta_2"></span>
             </a>
@@ -526,14 +549,16 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="button button-whatsapp-hero"
-                data-i18n="whatsapp_write">
+                data-i18n="whatsapp_write"
+                title="Scrivici su WhatsApp per informazioni">
               </a>
               <a 
                 href="https://www.facebook.com/groups/560460538256511/permalink/1764963694472850/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="button button-facebook-hero"
-                data-i18n="facebook_write">
+                data-i18n="facebook_write"
+                title="Contattaci su Facebook per informazioni">
               </a>
             </div>
             <div class="map-card">
@@ -551,7 +576,8 @@
                 href="https://www.google.com/maps/search/?api=1&query=Via%20Michele%20La%20Porta%2C%20Nard%C3%B2%20LE"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="contact-link map-link contact-link-cta">
+                class="contact-link map-link contact-link-cta"
+                title="Apri la posizione su Google Maps">
                 <i data-lucide="map-pin"></i>
                 <span data-i18n="open_maps"></span>
               </a>
@@ -576,6 +602,7 @@
           href="https://wa.me/393401584862?text=Ciao,%20ho%20visto%20il%20tuo%20sito%20web%20per%20Casa%20Salento.%20Sono%20interessato%20e%20vorrei%20maggiori%20informazioni%20sul%20tuo%20lavoro"
           target="_blank"
           rel="noopener noreferrer"
+          title="Contatta il creatore del sito per maggiori informazioni"
         >
           <p class="footer-credit-label" data-i18n="website_ref"></p>
           <p class="footer-credit-name">Bagnolini Tommaso</p>

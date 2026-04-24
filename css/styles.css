@@ -390,8 +390,8 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   padding: 0;
   border-radius: 999px;
   background: transparent;
@@ -534,6 +534,19 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1;
+}
+
+nav a i {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .mobile-menu a {
