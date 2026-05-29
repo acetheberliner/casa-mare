@@ -7,7 +7,7 @@
   
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="canonical" href="https://casasalento.netlify.app/">
-  <link rel="stylesheet" href="./css/styles.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
 
   <meta name="title" content="Casa vacanze a Santa Maria al Bagno, Salento | Vista mare e relax">
   <meta name="description" content="Casa vacanze a Santa Maria al Bagno, Salento. Vista mare, 5 posti letto, a 400m dalla spiaggia. Ideale per relax e vacanze in Puglia.">
@@ -595,16 +595,28 @@
           <p class="footer-small" data-i18n="disclaimer"></p>
         </div>
 
-        <a 
+        <a
           class="footer-credit"
-          data-config-href="developerWhatsapp"
+          href="https://tbagnolini.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
-          title="Contatta il creatore del sito per maggiori informazioni"
+          title="visita il portfolio di bagnolini tommaso"
+          aria-label="visita il portfolio di bagnolini tommaso"
         >
-          <p class="footer-credit-label" data-i18n="website_ref"></p>
-          <p class="footer-credit-name">Bagnolini Tommaso</p>
-          <span class="footer-credit-link" data-i18n="whatsapp_me"></span>
+          <img class="footer-credit-avatar" src="./assets/images/pfp.jpeg" alt="Bagnolini Tommaso">
+
+          <span class="footer-credit-content">
+            <span class="footer-credit-kicker" data-i18n="website_ref"></span>
+            <strong>Bagnolini Tommaso</strong>
+            <small>Portfolio</small>
+          </span>
+
+          <span class="footer-credit-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 17L17 7" />
+              <path d="M9 7H17V15" />
+            </svg>
+          </span>
         </a>
       </div>
     </div>
