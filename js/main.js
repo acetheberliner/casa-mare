@@ -196,6 +196,63 @@ function detectInitialLanguage() {
     return navigator.language.toLowerCase().startsWith('en') ? 'en' : 'it';
 }
 
+function initPageScrollbar() {
+    const scrollbar = $('.page-scrollbar');
+    const thumb = $('.page-scrollbar-thumb');
+    if (!scrollbar || !thumb || !window.matchMedia('(pointer: fine)').matches) return;
+
+    let dragging = false;
+    let dragStartY = 0;
+    let dragStartScrollY = 0;
+
+    const updateThumb = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const viewportHeight = window.innerHeight;
+    const trackHeight = scrollbar.clientHeight;
+    const maxScroll = Math.max(scrollHeight - viewportHeight, 0);
+    const thumbHeight = Math.max((viewportHeight / scrollHeight) * trackHeight, 44);
+    const maxThumbTop = Math.max(trackHeight - thumbHeight, 0);
+    const thumbTop = maxScroll ? (window.scrollY / maxScroll) * maxThumbTop : 0;
+
+    scrollbar.hidden = maxScroll === 0;
+    thumb.style.height = `${thumbHeight}px`;
+    thumb.style.transform = `translateY(${thumbTop}px)`;
+    };
+
+    thumb.addEventListener('pointerdown', (event) => {
+    dragging = true;
+    dragStartY = event.clientY;
+    dragStartScrollY = window.scrollY;
+    thumb.classList.add('is-dragging');
+    thumb.setPointerCapture(event.pointerId);
+    });
+
+    thumb.addEventListener('pointermove', (event) => {
+    if (!dragging) return;
+
+    const scrollHeight = document.documentElement.scrollHeight;
+    const viewportHeight = window.innerHeight;
+    const availableTrack = scrollbar.clientHeight - thumb.offsetHeight;
+    const maxScroll = scrollHeight - viewportHeight;
+    if (availableTrack <= 0 || maxScroll <= 0) return;
+
+    window.scrollTo(0, dragStartScrollY + ((event.clientY - dragStartY) / availableTrack) * maxScroll);
+    });
+
+    const stopDragging = (event) => {
+    if (!dragging) return;
+    dragging = false;
+    thumb.classList.remove('is-dragging');
+    if (thumb.hasPointerCapture(event.pointerId)) thumb.releasePointerCapture(event.pointerId);
+    };
+
+    thumb.addEventListener('pointerup', stopDragging);
+    thumb.addEventListener('pointercancel', stopDragging);
+    window.addEventListener('scroll', updateThumb, { passive: true });
+    window.addEventListener('resize', updateThumb);
+    updateThumb();
+}
+
 if (menuBtn) {
     menuBtn.addEventListener('click', toggleMobileMenu);
 }
@@ -244,6 +301,7 @@ updateNavbar();
 initReveal();
 initSlider(galleryTrack, galleryPrev, galleryNext, 'Foto Casa Salento');
 initSlider(territoryTrack, territoryPrev, territoryNext, 'Foto territorio');
+initPageScrollbar();
 
 applySiteConfig();
 

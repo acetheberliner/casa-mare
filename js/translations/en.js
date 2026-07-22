@@ -7,12 +7,12 @@ window.TRANSLATIONS_EN = {
     nav_contacts: "Contacts",
     cta_info: "Request info",
 
-    hero_badge: "Sea view, relax and strategic location",
+    hero_badge: "Quattro Colonne, Nardò · 400 m from the sea",
     
-    hero_text: "Where the sun meets the sea, Casa Salento is a holiday home in Santa Maria al Bagno (LE), in the heart of Salento, perfect for those seeking sea views, relaxation and a strategic location near the beach.",
+    hero_text: "A seaside home in Santa Maria al Bagno, with Ionian sunsets and the beach close by. Salento, at your own pace.",
     hero_cta_1: `<svg class="icon" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20.52 3.48A11.94 11.94 0 0 0 12.01 0C5.37 0 .02 5.36.02 12c0 2.12.56 4.2 1.63 6.04L0 24l6.12-1.6A11.96 11.96 0 0 0 12 24c6.63 0 12-5.36 12-12 0-3.2-1.25-6.2-3.48-8.52zM12 21.82c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.63.95.97-3.54-.24-.37A9.78 9.78 0 0 1 2.2 12c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87A9.73 9.73 0 0 1 21.8 12c0 5.4-4.4 9.82-9.8 9.82zm5.43-7.36c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.8-1.68-2.1-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.48.7.3 1.25.48 1.68.62.7.22 1.33.2 1.83.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/>
-    </svg>Contact us on WhatsApp`,
+    </svg>Contact us`,
     hero_cta_2: `Discover the house`,
     hero_stat_1: "Beds",
     hero_stat_2: "From the sea",
@@ -83,7 +83,7 @@ window.TRANSLATIONS_EN = {
     territory_gallery_label: "Area and surroundings",
     territory_title: "Sea, nature, villages and authentic Salento traditions",
     territory_text: "Staying at Casa Salento means having the pearls of the Ionian Sea within easy reach: beaches, pinewoods, cliffs, villages, stylish beach clubs, seafood restaurants and summer evenings to enjoy to the fullest.",
-    territory_box_title_1: "Sea and nature just minutes away",
+    territory_box_title_1: "Sea and nature",
     territory_box_text_1: "Santa Maria al Bagno, Porto Selvaggio, Padula Bianca, Lido Pizzo and Torre Uluzzo are perfect for those who love crystal-clear waters and authentic scenery.",
     territory_box_title_2: "Villages, culture and flavors",
     territory_box_text_2: "Nardò, Gallipoli, the Museum of Hospitality, the Salento Aquarium, the Sunday markets and summer festivals all tell the story of the area.",

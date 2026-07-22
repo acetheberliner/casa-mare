@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="Casa vacanze a Santa Maria al Bagno, Salento. Vista mare, 5 posti letto, a 400m dalla spiaggia. Ideale per relax e vacanze in Puglia.">
   <meta name="twitter:image" content="./assets/images/panorama.webp">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -130,14 +130,18 @@
     <section id="home" class="hero">
       <div class="hero-overlay"></div>
       <div class="container hero-content">
-        <div class="reveal">
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            <span data-i18n="hero_badge"></span>
-          </div>
+        <h1 class="hero-title hero-title-mobile">
+          <span class="hero-title-gradient">Salento</span>
+        </h1>
 
-          <h1 class="hero-title">
-            <span>Casa</span>
+        <div class="reveal">
+          <!-- <div class="hero-badge">
+            <i data-lucide="map-pin" aria-hidden="true"></i>
+            <span data-i18n="hero_badge"></span>
+          </div> -->
+
+          <h1 class="hero-title hero-title-desktop">
+            <!-- <span>Casa</span> -->
             <span class="hero-title-gradient">Salento</span>
           </h1>
 
@@ -151,41 +155,8 @@
             </a>
           </div>
 
-          <div class="hero-stats">
-            <div class="stat-card">
-              <div class="stat-value"><i data-lucide="bed-double"></i> 5</div>
-              <div class="stat-label" data-i18n="hero_stat_1"></div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value"><i data-lucide="ruler"></i> 400 m</div>
-              <div class="stat-label" data-i18n="hero_stat_2"></div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value"><i data-lucide="house"></i> 60 m²</div>
-              <div class="stat-label" data-i18n="hero_stat_3"></div>
-            </div>
-          </div>
         </div>
 
-        <div class="hero-card reveal">
-          <div class="hero-card-image">
-            <img
-              src="./assets/images/salotto.webp"
-              alt="Casa Salento vista mare"
-              data-i18n-alt="hero_img_alt"
-            />
-          </div>
-          <div class="hero-card-meta">
-            <div class="hero-meta-box">
-              <div class="hero-meta-label" data-i18n="hero_meta_label_1"></div>
-              <div class="hero-meta-value">Quattro Colonne, Nardò</div>
-            </div>
-            <div class="hero-meta-box">
-              <div class="hero-meta-label" data-i18n="hero_meta_label_2"></div>
-              <div class="hero-meta-value" data-i18n="hero_meta_value_2"></div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -200,7 +171,9 @@
         <div class="grid-3 feedback-grid">
           <article class="card card-dark review-card reveal">
             <div class="review-top">
-              <div class="review-avatar">GR</div>
+              <div class="review-avatar">
+                <img src="./assets/images/review-giulia.webp" alt="" width="52" height="52" loading="lazy" />
+              </div>
               <div class="review-head">
                 <p class="review-author" data-i18n="feedback_author_1"></p>
                 <p class="review-meta" data-i18n="feedback_meta_1"></p>
@@ -214,7 +187,9 @@
 
           <article class="card card-dark review-card reveal">
             <div class="review-top">
-              <div class="review-avatar">ME</div>
+              <div class="review-avatar">
+                <img src="./assets/images/review-marco-elena.webp" alt="" width="52" height="52" loading="lazy" />
+              </div>
               <div class="review-head">
                 <p class="review-author" data-i18n="feedback_author_2"></p>
                 <p class="review-meta" data-i18n="feedback_meta_2"></p>
@@ -228,7 +203,9 @@
 
           <article class="card card-dark review-card reveal">
             <div class="review-top">
-              <div class="review-avatar">FG</div>
+              <div class="review-avatar">
+                <img src="./assets/images/review-famiglia-greco.webp" alt="" width="52" height="52" loading="lazy" />
+              </div>
               <div class="review-head">
                 <p class="review-author" data-i18n="feedback_author_3"></p>
                 <p class="review-meta" data-i18n="feedback_meta_3"></p>
@@ -597,7 +574,7 @@
 
         <a
           class="footer-credit"
-          href="https://tbagnolini.netlify.app/"
+          href="https://avely.me/tmsbgn"
           target="_blank"
           rel="noopener noreferrer"
           title="visita il portfolio di bagnolini tommaso"
@@ -607,8 +584,7 @@
 
           <span class="footer-credit-content">
             <span class="footer-credit-kicker" data-i18n="website_ref"></span>
-            <strong>Bagnolini Tommaso</strong>
-            <small>Portfolio</small>
+            <strong style="color: #000074">Bagnolini Tommaso</strong>
           </span>
 
           <span class="footer-credit-arrow" aria-hidden="true">
@@ -629,6 +605,10 @@
       </svg>
     </button>
     <img id="lightboxImage" class="lightbox-image" src="" alt="Anteprima immagine" />
+  </div>
+
+  <div class="page-scrollbar" aria-hidden="true">
+    <div class="page-scrollbar-thumb"></div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
