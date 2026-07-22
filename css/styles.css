@@ -522,14 +522,14 @@ button {
   padding: 14px 22px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.06);
+  background: linear-gradient(105deg, rgba(3, 43, 26, 0.12) 0%, rgba(8, 61, 52, 0) 58%, #0b5c4200 100%);
   color: var(--color-white);
   backdrop-filter: blur(12px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   transition: all 0.25s ease;
 }
 
-.button-secondary:hover {
+.button-secondary:hover, .button-whatsapp-hero:hover {
   background: rgba(255, 255, 255, 0.16);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
 }
@@ -814,7 +814,7 @@ nav a i {
 }
 
 .hero-title-gradient {
-  color: #f3bd61fa;
+  color: #f8ca7bfa;
   font-style: italic;
   font-weight: 600;
 }
@@ -843,6 +843,25 @@ nav a i {
   flex-wrap: nowrap;
   gap: 16px;
   margin: 0 0 4px;
+}
+
+@media (min-width: 1081px) {
+  .hero-content {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: clamp(28px, 3vw, 56px);
+  }
+
+  .hero-content > .reveal {
+    grid-template-columns: minmax(0, 600px) auto;
+    justify-content: start;
+    column-gap: clamp(24px, 2.4vw, 44px);
+  }
+
+  .hero-actions {
+    justify-self: start;
+  }
 }
 
 .grid-2,
